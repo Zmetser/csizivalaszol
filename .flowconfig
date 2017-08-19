@@ -1,0 +1,6 @@
+[ignore]
+.*/node_modules/.*
+.*/old/.*
+
+[libs]
+flow-typed
