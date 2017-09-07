@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Text /> apply nested styles 1`] = `
+<strong>
+  <em>
+    Foo
+  </em>
+</strong>
+`;
+
+exports[`<Text /> apply styles 1`] = `
+<strong>
+  Foo
+</strong>
+`;
+
+exports[`<Text /> text with "Bold" style renders with the correct element 1`] = `
+<strong>
+  Bold
+</strong>
+`;
+
+exports[`<Text /> text with "Code" style renders with the correct element 1`] = `
+<code>
+  Code
+</code>
+`;
+
+exports[`<Text /> text with "Italic" style renders with the correct element 1`] = `
+<em>
+  Italic
+</em>
+`;
+
+exports[`<Text /> text with "Small" style renders with the correct element 1`] = `
+<small>
+  Small
+</small>
+`;
+
+exports[`<Text /> text with "Struck" style renders with the correct element 1`] = `
+<s>
+  Struck
+</s>
+`;
+
+exports[`<Text /> text with "Subscript" style renders with the correct element 1`] = `
+<sub>
+  Subscript
+</sub>
+`;
+
+exports[`<Text /> text with "Superscript" style renders with the correct element 1`] = `
+<sup>
+  Superscript
+</sup>
+`;
+
+exports[`<Text /> text with "Underline" style renders with the correct element 1`] = `
+<u>
+  Underline
+</u>
+`;
+
+exports[`<Text /> unknown style falls back to span 1`] = `
+<strong>
+  <span>
+    Foo
+  </span>
+</strong>
+`;
