@@ -1,0 +1,6 @@
+{
+  "moduleFileExtensions": ["js"],
+  "moduleDirectories": ["node_modules"],
+  "rootDir": "../",
+  "roots": ["<rootDir>/messageBody/"]
+}
