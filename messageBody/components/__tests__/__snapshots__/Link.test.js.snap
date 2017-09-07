@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<a /> link 1`] = `
+<a
+  href="#"
+>
+  Foo
+</a>
+`;
+
+exports[`<a /> link with "_blank" target 1`] = `
+<a
+  href="#"
+  target="_blank"
+>
+  Foo
+</a>
+`;
+
+exports[`<a /> link with a list of values 1`] = `
+<a
+  href="#"
+  target="_blank"
+>
+  <em>
+    Foo
+  </em>
+  <em>
+    Foo
+  </em>
+  <em>
+    Foo
+  </em>
+</a>
+`;
+
+exports[`<a /> link with styled content 1`] = `
+<a
+  href="#"
+  target="_blank"
+>
+  <em>
+    Foo
+  </em>
+</a>
+`;
