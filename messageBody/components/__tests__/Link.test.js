@@ -1,3 +1,6 @@
+/**
+ * @flow
+ */
 import renderer from 'react-test-renderer'
 
 import Link from '../Link'

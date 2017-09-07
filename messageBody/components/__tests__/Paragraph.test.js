@@ -1,3 +1,6 @@
+/**
+ * @flow
+ */
 import renderer from 'react-test-renderer'
 
 import {
@@ -13,25 +16,26 @@ const fooLink = createLink([fooText], '#')
 describe('<Paragraph />', () => {
   test('with text', () => {
     const element = renderer.create(
-      Paragraph({ value: [fooText] })
+      Paragraph({ value: [fooText] }, 0)
     )
     expect(element.toJSON()).toMatchSnapshot()
   })
 
   test('with text, link and text', () => {
     const element = renderer.create(
-      Paragraph({ value: [fooText, fooLink, fooText] })
+      Paragraph({ value: [fooText, fooLink, fooText] }, 0)
     )
     expect(element.toJSON()).toMatchSnapshot()
   })
 
   test('with styled text', () => {
+    const value = [
+      createTextNode('Bold', ['Bold']),
+      createTextNode('Italic', ['Italic']),
+      createTextNode('Small and Code', ['Small', 'Code'])
+    ]
     const element = renderer.create(
-      Paragraph({ value: [
-        createTextNode('Bold', ['Bold']),
-        createTextNode('Italic', ['Italic']),
-        createTextNode('Small and Code', ['Small', 'Code'])
-      ] })
+      Paragraph({ value }, 0)
     )
     expect(element.toJSON()).toMatchSnapshot()
   })

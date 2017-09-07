@@ -2,7 +2,7 @@
  * @flow
  */
 
-import type { InlineStyle, InlineNode, TextNode } from '../messageBody/types'
+import type { InlineStyle, InlineNode, TextNode, ImageNode } from '../messageBody/types'
 
 const jsdom = require('jsdom')
 const { JSDOM } = jsdom
@@ -147,7 +147,7 @@ function exportInlineNodes (nodes: NodeList<Node>): Array<InlineNode> {
   return traverse(nodes.entries(), [], [])
 }
 
-function exportImage (imageElement: HTMLImageElement): TextNode | Image | null {
+function exportImage (imageElement: HTMLImageElement): TextNode | ImageNode | null {
   const src = imageElement.getAttribute('src')
 
   if (src) {

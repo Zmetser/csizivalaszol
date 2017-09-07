@@ -4,3 +4,10 @@
 
 [libs]
 flow-typed
+
+[options]
+suppress_comment= \\(.\\|\n\\)*\\$FlowFixMe
+suppress_comment= \\(.\\|\n\\)*\\$FlowSkipForTesting
+
+[version]
+^0.54.1

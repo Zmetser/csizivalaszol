@@ -2,15 +2,11 @@
  * @flow
  */
 
-import React from 'react'
-import type { InlineNode } from '../types'
+import * as React from 'react'
+import type { ParagraphNode } from '../types'
 
 import renderInlineNodes from '../renderer/renderInlineNodes'
 
-type Props = {
-  value: Array<InlineNode>
-}
-
-export default function Paragraph ({ value }: Props) {
-  return <p>{renderInlineNodes(value)}</p>
+export default function Paragraph ({ value }: $Shape<ParagraphNode>, key: React.Key): React.Element<'p'> {
+  return <p key={key}>{renderInlineNodes(value)}</p>
 }

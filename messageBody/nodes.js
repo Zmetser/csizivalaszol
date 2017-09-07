@@ -5,11 +5,14 @@
  */
 
 import type {
+  ImageAttributes,
+  ImageNode,
+  InlineNode,
   InlineStyle,
-  TextNode,
   LineBreakNode,
   LinkNode,
-  InlineNode
+  ParagraphNode,
+  TextNode
 } from './types'
 
 const createTextNode = (value: string, styles: Array<InlineStyle>): TextNode => ({
@@ -27,8 +30,7 @@ const createLink = (value: Array<TextNode>, href: string, target?: ?string): Lin
   target
 })
 
-type ImageAttributes = { src: string, alt: string, width: number, height: number }
-const createImage = ({ src, alt, width, height }: ImageAttributes) => ({
+const createImage = ({ src, alt, width, height }: ImageAttributes): ImageNode => ({
   type: 'Image',
   src,
   alt,
@@ -36,7 +38,7 @@ const createImage = ({ src, alt, width, height }: ImageAttributes) => ({
   height
 })
 
-const createParagraph = (value: Array<InlineNode>) => ({
+const createParagraph = (value: Array<InlineNode>): ParagraphNode => ({
   type: 'Paragraph',
   value
 })
