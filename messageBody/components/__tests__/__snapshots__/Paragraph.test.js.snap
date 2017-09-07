@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Paragraph /> with styled text 1`] = `
+<p>
+  <strong>
+    Bold
+  </strong>
+  <em>
+    Italic
+  </em>
+  <small>
+    <code>
+      Small and Code
+    </code>
+  </small>
+</p>
+`;
+
+exports[`<Paragraph /> with text 1`] = `
+<p>
+  Foo
+</p>
+`;
+
+exports[`<Paragraph /> with text, link and text 1`] = `
+<p>
+  Foo
+  <a
+    href="#"
+  >
+    Foo
+  </a>
+  Foo
+</p>
+`;
