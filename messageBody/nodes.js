@@ -4,27 +4,31 @@
  * All the usable nodes
  */
 
-export type InlineStyle = 'Italic' | 'Bold' | 'Struck' | 'Small' | 'Code' | 'Subscript' | 'Superscript' | 'Underline' | 'Normal'
+import type {
+  InlineStyle,
+  TextNode,
+  LineBreakNode,
+  LinkNode,
+  InlineNode
+} from './types'
 
-const TextNode = (value: string, styles: Array<InlineStyle>) => ({
+const createTextNode = (value: string, styles: Array<InlineStyle>): TextNode => ({
   type: 'Text',
   value,
   styles
 })
 
-const LineBreak = () => ({ type: 'LineBreak' })
+const createLineBreak = (): LineBreakNode => ({ type: 'LineBreak' })
 
-const Link = (value: Array<TextNode>, href: string, target?: ?string) => ({
+const createLink = (value: Array<TextNode>, href: string, target?: ?string): LinkNode => ({
   type: 'Link',
   value,
   href,
   target
 })
 
-export type InlineNode = TextNode | LineBreak | Link;
-
 type ImageAttributes = { src: string, alt: string, width: number, height: number }
-const Image = ({ src, alt, width, height }: ImageAttributes) => ({
+const createImage = ({ src, alt, width, height }: ImageAttributes) => ({
   type: 'Image',
   src,
   alt,
@@ -32,15 +36,15 @@ const Image = ({ src, alt, width, height }: ImageAttributes) => ({
   height
 })
 
-const Paragraph = (value: Array<InlineNode>) => ({
+const createParagraph = (value: Array<InlineNode>) => ({
   type: 'Paragraph',
   value
 })
 
 module.exports = {
-  TextNode,
-  Paragraph,
-  LineBreak,
-  Link,
-  Image
+  createTextNode,
+  createParagraph,
+  createLineBreak,
+  createLink,
+  createImage
 }

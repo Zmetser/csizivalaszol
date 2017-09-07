@@ -2,7 +2,7 @@
  * @flow
  */
 
-import type { InlineStyle, InlineNode } from '../messageBody/nodes'
+import type { InlineStyle, InlineNode, TextNode } from '../messageBody/types'
 
 const jsdom = require('jsdom')
 const { JSDOM } = jsdom
@@ -12,11 +12,11 @@ const { document, Element, HTMLImageElement } = window
 const { isEmoticon, emoticonImageToUnicode } = require('./helpers/emoticon')
 
 const {
-  TextNode,
-  Paragraph,
-  LineBreak,
-  Link,
-  Image
+  createTextNode,
+  createParagraph,
+  createLineBreak,
+  createLink,
+  createImage
 } = require('../messageBody/nodes')
 
 const {
@@ -78,31 +78,46 @@ function nodeNameToStyle (nodeName: string): InlineStyle {
   }
 }
 
+function exportTextNodes (nodes: NodeList<Node>): Array<TextNode> {
+  const traverse = (iterator: Iterator<[number, Node]>, styles: Array<InlineStyle>, memo: Array<TextNode>) => {
+    for (const [, node] of iterator) {
+      if (nodeName(node) === '#text') {
+        memo.push(createTextNode(node.textContent, styles))
+      } else {
+        traverse(node.childNodes.entries(), styles, memo)
+      }
+    }
+
+    return memo
+  }
+  return traverse(nodes.entries(), [], [])
+}
+
 function exportInlineNodes (nodes: NodeList<Node>): Array<InlineNode> {
   const traverse = (iterator: Iterator<[number, Node]>, styles: Array<InlineStyle>, memo: Array<InlineNode>) => {
     for (const [, node] of iterator) {
       switch (nodeName(node)) {
         case '#text':
-          memo.push(TextNode(node.textContent, styles))
+          memo.push(createTextNode(node.textContent, styles))
           break
         case 'a':
           if (node instanceof Element) {
             const href = node.getAttribute('href') || 'javascript:;'
-            const content = exportInlineNodes(node.childNodes)
+            const content = exportTextNodes(node.childNodes)
 
-            memo.push(Link(content, href, '_blank'))
+            memo.push(createLink(content, href, '_blank'))
           }
           break
         case 'img':
           if (node instanceof HTMLImageElement) {
             const src = node.getAttribute('src')
             if (src && isEmoticon(src)) {
-              memo.push(TextNode(emoticonImageToUnicode(src), []))
+              memo.push(createTextNode(emoticonImageToUnicode(src), []))
             }
           }
           break
         case 'br':
-          memo.push(LineBreak())
+          memo.push(createLineBreak())
           break
         case 'b':
         case 'code':
@@ -137,7 +152,7 @@ function exportImage (imageElement: HTMLImageElement): TextNode | Image | null {
 
   if (src) {
     if (isEmoticon(src)) {
-      return TextNode(emoticonImageToUnicode(src), [])
+      return createTextNode(emoticonImageToUnicode(src), [])
     } else {
       const alt = imageElement.getAttribute('alt')
       const width = parseInt(imageElement.getAttribute('width'), 10)
@@ -150,7 +165,7 @@ function exportImage (imageElement: HTMLImageElement): TextNode | Image | null {
         ...(height ? {height} : null)
       }
 
-      return Image(imageAttributes)
+      return createImage(imageAttributes)
     }
   }
 
@@ -168,7 +183,7 @@ module.exports = (html: string) => {
   const body = containers.map((node) => {
     switch (nodeName(node)) {
       case 'p':
-        return !containsOnlyWhitespace(node) ? Paragraph(exportInlineNodes(node.childNodes)) : null
+        return !containsOnlyWhitespace(node) ? createParagraph(exportInlineNodes(node.childNodes)) : null
       case 'img':
         return node instanceof HTMLImageElement ? exportImage(node) : null
     }
