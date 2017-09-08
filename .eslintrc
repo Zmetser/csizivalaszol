@@ -1,11 +1,10 @@
 {
   "extends": ["standard", "standard-flow", "standard-react"],
-  "plugins": ["flowtype", "react", "jest"],
+  "plugins": ["jest"],
   "env": {
     "jest/globals": true
   },
   "rules": {
-    "use-flow-type": 1,
     "no-unused-vars": 1
   }
 }
