@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render a single message with a single paragraph 1`] = `
+<article>
+  <p>
+    foo
+  </p>
+</article>
+`;
+
+exports[`Render a single message with multiple paragraphs 1`] = `
+<article>
+  <p>
+    foo
+  </p>
+  <p>
+    bar
+  </p>
+</article>
+`;
