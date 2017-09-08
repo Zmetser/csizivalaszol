@@ -15,22 +15,22 @@ import type {
   TextNode
 } from './types'
 
-const createTextNode = (value: string, styles: Array<InlineStyle>): TextNode => ({
+export const createTextNode = (value: string, styles: Array<InlineStyle>): TextNode => ({
   type: 'Text',
   value,
   styles
 })
 
-const createLineBreak = (): LineBreakNode => ({ type: 'LineBreak' })
+export const createLineBreak = (): LineBreakNode => ({ type: 'LineBreak' })
 
-const createLink = (value: Array<TextNode>, href: string, target?: ?string): LinkNode => ({
+export const createLink = (value: Array<TextNode>, href: string, target?: ?string): LinkNode => ({
   type: 'Link',
   value,
   href,
   target
 })
 
-const createImage = ({ src, alt, width, height }: ImageAttributes): ImageNode => ({
+export const createImage = ({ src, alt, width, height }: ImageAttributes): ImageNode => ({
   type: 'Image',
   src,
   alt,
@@ -38,15 +38,7 @@ const createImage = ({ src, alt, width, height }: ImageAttributes): ImageNode =>
   height
 })
 
-const createParagraph = (value: Array<InlineNode>): ParagraphNode => ({
+export const createParagraph = (value: Array<InlineNode>): ParagraphNode => ({
   type: 'Paragraph',
   value
 })
-
-module.exports = {
-  createTextNode,
-  createParagraph,
-  createLineBreak,
-  createLink,
-  createImage
-}
