@@ -3,5 +3,9 @@
   "plugins": ["flowtype", "react", "jest"],
   "env": {
     "jest/globals": true
+  },
+  "rules": {
+    "use-flow-type": 1,
+    "no-unused-vars": 1
   }
 }
