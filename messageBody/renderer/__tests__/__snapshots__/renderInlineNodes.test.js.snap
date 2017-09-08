@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render inline nodes with a single link 1`] = `
+<p>
+  <a
+    href="#"
+  >
+    foo
+  </a>
+</p>
+`;
+
+exports[`Render inline nodes with a single text node 1`] = `
+<p>
+  foo
+</p>
+`;
+
+exports[`Render inline nodes with everything 1`] = `
+<p>
+  foo
+  <a
+    href="#"
+  >
+    foo
+  </a>
+</p>
+`;
