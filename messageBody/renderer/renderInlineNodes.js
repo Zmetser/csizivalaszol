@@ -9,13 +9,15 @@ import type { InlineNode } from '../types'
 
 import {
   Text,
-  Link
+  Link,
+  LineBreak
 } from '../components'
 
 function createInlineNode (node: InlineNode, index): React.Element<*> {
   switch (node.type) {
     case 'Text': return Text(node, index)
     case 'Link': return <Link {...node} key={index} />
+    case 'LineBreak': return <LineBreak key={index} />
     default: throw new UnknownNodeError(node)
   }
 }

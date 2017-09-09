@@ -19,6 +19,7 @@ exports[`Render inline nodes with a single text node 1`] = `
 exports[`Render inline nodes with everything 1`] = `
 <p>
   foo
+  <br />
   <a
     href="#"
   >
