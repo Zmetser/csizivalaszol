@@ -7,6 +7,7 @@ const entities = new Entities()
 
 const normalize = require('./normalize')
 const bbCodeToHTML = require('./helpers/bbCode')
+const { usernameToID } = require('./helpers/author')
 
 const [, , inputFile, outputFile] = process.argv
 
@@ -61,6 +62,21 @@ const normalizeHTML = new Transform({
   }
 })
 
+const exportEntry = new Transform({
+  transform (chunk, encoding, callback) {
+    const post = JSON.parse(chunk.toString())
+    const authorId = usernameToID[post.username] || usernameToID['Anonymous']
+    callback(null, JSON.stringify({
+      authorId,
+      publishTime: {
+        timestamp: post.timestamp * 1000,
+        timezone: 'Europe/Budapest'
+      },
+      message: post.message
+    }))
+  }
+})
+
 const jsonWriter = new Transform({
   transform (chunk, encoding, callback) {
     const post = '\t' + chunk.toString() + ',\n'
@@ -87,6 +103,7 @@ fs.createReadStream(inputFile)
   .pipe(cleanMessage)
   .pipe(transformBBCode)
   .pipe(normalizeHTML)
+  .pipe(exportEntry)
   .pipe(jsonWriter)
   .pipe(reportProgress)
   .pipe(writeStream)
