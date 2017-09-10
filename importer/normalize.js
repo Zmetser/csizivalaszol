@@ -7,7 +7,7 @@ import type { InlineStyle, InlineNode, TextNode, ImageNode } from '../messageBod
 const jsdom = require('jsdom')
 const { JSDOM } = jsdom
 const { window } = new JSDOM('')
-const { document, Element, HTMLImageElement } = window
+const { document, Element, HTMLImageElement, HTMLUListElement, HTMLOListElement } = window
 
 const { isEmoticon, emoticonImageToUnicode } = require('./helpers/emoticon')
 
@@ -172,6 +172,28 @@ function exportImage (imageElement: HTMLImageElement): TextNode | ImageNode | nu
   return null
 }
 
+type ListType = 'Bullet' | 'Number'
+type ListItem = Array<InlineNode>
+type ListNode<T: ListType> = {
+  type: T,
+  children: Array<ListItem>
+}
+function exportList (node: HTMLUListElement, type: ListType): ListNode<ListType> {
+  const traverse = (iterator: Iterator<[number, Node]>, memo: Array<ListItem>): Array<ListItem> => {
+    for (const [, node] of iterator) {
+      if (nodeName(node) === 'li') {
+        memo.push(exportInlineNodes(node.childNodes))
+      }
+    }
+
+    return memo
+  }
+  return {
+    type,
+    children: traverse(node.childNodes.entries(), [])
+  }
+}
+
 module.exports = (html: string) => {
   const dom = new JSDOM('<!DOCTYPE html><article>' + html + '</article>')
   const post = dom.window.document.querySelector('article')
@@ -186,6 +208,10 @@ module.exports = (html: string) => {
         return !containsOnlyWhitespace(node) ? createParagraph(exportInlineNodes(node.childNodes)) : null
       case 'img':
         return node instanceof HTMLImageElement ? exportImage(node) : null
+      case 'ul':
+        return node instanceof HTMLUListElement ? exportList(node, 'Bullet') : null
+      case 'ol':
+        return node instanceof HTMLOListElement ? exportList(node, 'Number') : null
     }
   }).filter((node) => Boolean(node))
 

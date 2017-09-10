@@ -1,0 +1,159 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Export Ordered List list with formatting 1`] = `
+Array [
+  Object {
+    "children": Array [
+      Array [
+        Object {
+          "styles": Array [
+            "Bold",
+          ],
+          "type": "Text",
+          "value": "Tex",
+        },
+        Object {
+          "href": "#",
+          "target": "_blank",
+          "type": "Link",
+          "value": Array [
+            Object {
+              "styles": Array [],
+              "type": "Text",
+              "value": "t",
+            },
+          ],
+        },
+      ],
+      Array [
+        Object {
+          "styles": Array [],
+          "type": "Text",
+          "value": "Text",
+        },
+      ],
+    ],
+    "type": "Number",
+  },
+]
+`;
+
+exports[`Export Ordered List list with multiple child 1`] = `
+Array [
+  Object {
+    "children": Array [
+      Array [
+        Object {
+          "styles": Array [],
+          "type": "Text",
+          "value": "Text",
+        },
+      ],
+      Array [
+        Object {
+          "styles": Array [],
+          "type": "Text",
+          "value": "Text",
+        },
+      ],
+    ],
+    "type": "Number",
+  },
+]
+`;
+
+exports[`Export Ordered List list with one child 1`] = `
+Array [
+  Object {
+    "children": Array [
+      Array [
+        Object {
+          "styles": Array [],
+          "type": "Text",
+          "value": "Text",
+        },
+      ],
+    ],
+    "type": "Number",
+  },
+]
+`;
+
+exports[`Export Unordered List list with formatting 1`] = `
+Array [
+  Object {
+    "children": Array [
+      Array [
+        Object {
+          "styles": Array [
+            "Bold",
+          ],
+          "type": "Text",
+          "value": "Tex",
+        },
+        Object {
+          "href": "#",
+          "target": "_blank",
+          "type": "Link",
+          "value": Array [
+            Object {
+              "styles": Array [],
+              "type": "Text",
+              "value": "t",
+            },
+          ],
+        },
+      ],
+      Array [
+        Object {
+          "styles": Array [],
+          "type": "Text",
+          "value": "Text",
+        },
+      ],
+    ],
+    "type": "Bullet",
+  },
+]
+`;
+
+exports[`Export Unordered List list with multiple child 1`] = `
+Array [
+  Object {
+    "children": Array [
+      Array [
+        Object {
+          "styles": Array [],
+          "type": "Text",
+          "value": "Text",
+        },
+      ],
+      Array [
+        Object {
+          "styles": Array [],
+          "type": "Text",
+          "value": "Text",
+        },
+      ],
+    ],
+    "type": "Bullet",
+  },
+]
+`;
+
+exports[`Export Unordered List list with one child 1`] = `
+Array [
+  Object {
+    "children": Array [
+      Array [
+        Object {
+          "styles": Array [],
+          "type": "Text",
+          "value": "Text",
+        },
+      ],
+    ],
+    "type": "Bullet",
+  },
+]
+`;
