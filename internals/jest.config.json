@@ -2,5 +2,9 @@
   "moduleFileExtensions": ["js"],
   "moduleDirectories": ["node_modules"],
   "rootDir": "../",
-  "roots": ["<rootDir>/messageBody/"]
+  "roots": [
+    "<rootDir>/messageBody/",
+    "<rootDir>/importer/"
+  ],
+  "testRegex": ".*\\.test\\.js$"
 }

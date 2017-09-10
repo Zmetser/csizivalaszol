@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Export emoticon cool 1`] = `
+Array [
+  Object {
+    "styles": Array [],
+    "type": "Text",
+    "value": "😎",
+  },
+]
+`;
+
+exports[`Export emoticon yell 1`] = `
+Array [
+  Object {
+    "styles": Array [],
+    "type": "Text",
+    "value": "😖",
+  },
+]
+`;
+
+exports[`Export image  1`] = `
+Array [
+  Object {
+    "alt": "Ragnar",
+    "height": 653,
+    "src": "https://images-cdn.9gag.com/photo/abp6MBL_700b.jpg",
+    "type": "Image",
+    "width": 700,
+  },
+]
+`;
