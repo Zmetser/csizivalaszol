@@ -17,7 +17,7 @@ export type InlineStyle =
 export type TextNode = {
   type: "Text",
   value: string,
-  styles: Array<InlineStyle>
+  styles?: Array<InlineStyle>
 };
 
 export type LineBreakNode = { type: "LineBreak" };

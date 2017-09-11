@@ -1,6 +1,6 @@
 /**
  * @flow
- * 
+ *
  * Create formatted text elements from TextNode structures.
  */
 
@@ -21,7 +21,7 @@ function inlineStyleToTag (styleName: InlineStyle): string {
   }
 }
 
-export default function Text ({ value, styles }: $Shape<TextNode>, key: React.Key): React.Element<*> | string {
+export default function Text ({ value, styles = [] }: $Shape<TextNode>, key: React.Key): React.Element<*> | string {
   const reversedStyles = styles.slice().reverse()
   return reversedStyles.reduce((prev, styleName, index) =>
     React.createElement(inlineStyleToTag(styleName), { key: styleName + key }, prev), value)
