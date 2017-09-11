@@ -62,7 +62,11 @@ function paragraphizeNodes (nodes) {
       return iteratee(iterator, node, containers.concat([openContainer]))
     }
 
-    // Just append blocknodes
+    // Append blocknodes after closing current container
+    if (openContainer.childNodes.length) {
+      containers = containers.concat([openContainer])
+      openContainer = document.createElement('p')
+    }
     return iteratee(iterator, openContainer, containers.concat([node]))
   }
 
