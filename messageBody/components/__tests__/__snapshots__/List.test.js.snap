@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<OrderedList /> with 2 items 1`] = `
+<ol>
+  <li>
+    Foo
+  </li>
+  <li>
+    Foo
+  </li>
+</ol>
+`;
+
+exports[`<OrderedList /> with a single item 1`] = `
+<ol>
+  <li>
+    Foo
+  </li>
+</ol>
+`;
+
+exports[`<UnorderedList /> with 2 items 1`] = `
+<ul>
+  <li>
+    Foo
+  </li>
+  <li>
+    Foo
+  </li>
+</ul>
+`;
+
+exports[`<UnorderedList /> with a single item 1`] = `
+<ul>
+  <li>
+    Foo
+  </li>
+</ul>
+`;
