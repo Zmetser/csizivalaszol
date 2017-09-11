@@ -3,7 +3,7 @@
 exports[`Export Ordered List list with formatting 1`] = `
 Array [
   Object {
-    "children": Array [
+    "items": Array [
       Array [
         Object {
           "styles": Array [
@@ -33,7 +33,8 @@ Array [
         },
       ],
     ],
-    "type": "Number",
+    "listType": "Number",
+    "type": "List",
   },
 ]
 `;
@@ -41,7 +42,7 @@ Array [
 exports[`Export Ordered List list with multiple child 1`] = `
 Array [
   Object {
-    "children": Array [
+    "items": Array [
       Array [
         Object {
           "styles": Array [],
@@ -57,7 +58,8 @@ Array [
         },
       ],
     ],
-    "type": "Number",
+    "listType": "Number",
+    "type": "List",
   },
 ]
 `;
@@ -65,7 +67,7 @@ Array [
 exports[`Export Ordered List list with one child 1`] = `
 Array [
   Object {
-    "children": Array [
+    "items": Array [
       Array [
         Object {
           "styles": Array [],
@@ -74,7 +76,8 @@ Array [
         },
       ],
     ],
-    "type": "Number",
+    "listType": "Number",
+    "type": "List",
   },
 ]
 `;
@@ -82,7 +85,7 @@ Array [
 exports[`Export Unordered List list with formatting 1`] = `
 Array [
   Object {
-    "children": Array [
+    "items": Array [
       Array [
         Object {
           "styles": Array [
@@ -112,7 +115,8 @@ Array [
         },
       ],
     ],
-    "type": "Bullet",
+    "listType": "Bullet",
+    "type": "List",
   },
 ]
 `;
@@ -120,7 +124,7 @@ Array [
 exports[`Export Unordered List list with multiple child 1`] = `
 Array [
   Object {
-    "children": Array [
+    "items": Array [
       Array [
         Object {
           "styles": Array [],
@@ -136,7 +140,8 @@ Array [
         },
       ],
     ],
-    "type": "Bullet",
+    "listType": "Bullet",
+    "type": "List",
   },
 ]
 `;
@@ -144,7 +149,7 @@ Array [
 exports[`Export Unordered List list with one child 1`] = `
 Array [
   Object {
-    "children": Array [
+    "items": Array [
       Array [
         Object {
           "styles": Array [],
@@ -153,7 +158,8 @@ Array [
         },
       ],
     ],
-    "type": "Bullet",
+    "listType": "Bullet",
+    "type": "List",
   },
 ]
 `;

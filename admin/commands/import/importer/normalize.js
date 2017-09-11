@@ -2,7 +2,15 @@
  * @flow
  */
 
-import type { InlineStyle, InlineNode, TextNode, ImageNode } from '../../../../messageBody/types'
+import type {
+  InlineStyle,
+  InlineNode,
+  TextNode,
+  ImageNode,
+  ListType,
+  ListItem,
+  ListNode
+} from '../../../../messageBody/types'
 
 const jsdom = require('jsdom')
 const { JSDOM } = jsdom
@@ -16,7 +24,8 @@ const {
   createParagraph,
   createLineBreak,
   createLink,
-  createImage
+  createImage,
+  createList
 } = require('../../../../messageBody/nodes')
 
 const {
@@ -172,13 +181,7 @@ function exportImage (imageElement: HTMLImageElement): TextNode | ImageNode | nu
   return null
 }
 
-type ListType = 'Bullet' | 'Number'
-type ListItem = Array<InlineNode>
-type ListNode<T: ListType> = {
-  type: T,
-  children: Array<ListItem>
-}
-function exportList (node: HTMLUListElement, type: ListType): ListNode<ListType> {
+function exportList (node: HTMLUListElement, listType: ListType): ListNode<ListType> {
   const traverse = (iterator: Iterator<[number, Node]>, memo: Array<ListItem>): Array<ListItem> => {
     for (const [, node] of iterator) {
       if (nodeName(node) === 'li') {
@@ -188,10 +191,7 @@ function exportList (node: HTMLUListElement, type: ListType): ListNode<ListType>
 
     return memo
   }
-  return {
-    type,
-    children: traverse(node.childNodes.entries(), [])
-  }
+  return createList(traverse(node.childNodes.entries(), []), listType)
 }
 
 module.exports = (html: string) => {

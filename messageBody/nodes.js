@@ -12,7 +12,10 @@ import type {
   LineBreakNode,
   LinkNode,
   ParagraphNode,
-  TextNode
+  TextNode,
+  ListType,
+  ListItem,
+  ListNode
 } from './types'
 
 export const createTextNode = (value: string, styles: Array<InlineStyle>): TextNode => ({
@@ -42,3 +45,11 @@ export const createParagraph = (value: Array<InlineNode>): ParagraphNode => ({
   type: 'Paragraph',
   value
 })
+
+export function createList<T: ListType> (items: Array<ListItem>, listType: T): ListNode<T> {
+  return {
+    type: 'List',
+    listType,
+    items
+  }
+}
