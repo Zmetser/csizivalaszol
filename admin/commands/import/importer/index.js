@@ -1,6 +1,7 @@
 const fs = require('fs')
 const split = require('split')
 const { Transform } = require('stream')
+const generateID = require('./helpers/generateID')
 
 const Entities = require('html-entities').Html5Entities
 const entities = new Entities()
@@ -8,8 +9,6 @@ const entities = new Entities()
 const normalize = require('./normalize')
 const bbCodeToHTML = require('./helpers/bbCode')
 const { usernameToID } = require('./helpers/author')
-
-const [, , inputFile, outputFile] = process.argv
 
 /**
  * Transform the tabulated data into a json.
@@ -79,7 +78,9 @@ const exportEntry = new Transform({
 
 const jsonWriter = new Transform({
   transform (chunk, encoding, callback) {
-    const post = '\t' + chunk.toString() + ',\n'
+    const entry = JSON.parse(chunk.toString())
+    const id = generateID(entry.publishTime.timestamp)
+    const post = `\t"${id}": ${chunk.toString()},\n`
     callback(null, post)
   }
 })
@@ -91,19 +92,28 @@ const reportProgress = new Transform({
   }
 })
 
-fs.writeFileSync(outputFile, '{"messages": [\n')
-const writeStream = fs.createWriteStream(outputFile, { flags: 'r+', start: 15 })
-writeStream.on('close', () => {
-  fs.appendFileSync(outputFile, ']}')
-})
+module.exports = (inputFile, outputFile) => {
+  return new Promise((resolve, reject) => {
+    fs.writeFileSync(outputFile, '{\n')
+    const writeStream = fs.createWriteStream(outputFile, { flags: 'r+', start: 2 })
+    writeStream.on('close', () => {
+      const { size } = fs.statSync(outputFile)
+      // remove last ",\n"
+      fs.truncateSync(outputFile, size - 2)
+      fs.appendFileSync(outputFile, '\n}')
+      console.info('OK')
+      resolve()
+    })
 
-fs.createReadStream(inputFile)
-  .pipe(split())
-  .pipe(toJSON)
-  .pipe(cleanMessage)
-  .pipe(transformBBCode)
-  .pipe(normalizeHTML)
-  .pipe(exportEntry)
-  .pipe(jsonWriter)
-  .pipe(reportProgress)
-  .pipe(writeStream)
+    fs.createReadStream(inputFile)
+      .pipe(split())
+      .pipe(toJSON)
+      .pipe(cleanMessage)
+      .pipe(transformBBCode)
+      .pipe(normalizeHTML)
+      .pipe(exportEntry)
+      .pipe(jsonWriter)
+      .pipe(reportProgress)
+      .pipe(writeStream)
+  })
+}

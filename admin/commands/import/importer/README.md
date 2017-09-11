@@ -11,20 +11,27 @@ Where the `Email` and `Url` fields might not exist. In this case
 `Dingo|1209017777|Hááát ez csábító, lehet maradok. itthon....Egyedül....|[EOM]`
 `|1265311392|<p>2010-re megokosodok?</p>|[EOM]`
 
-Note: Username is missing for the last 271 messages.
+Note: Username is missing for the last ~260 messages.
 
 ## Imported structure
 
 ```
 username: ?string
 timestamp: number
-email?: ?string // Not exporting
-url?: ?url      // Not exporting
+email?: ?string
+url?: ?url
 message: string
 ```
 
-### Import command
+## Exported (Entry) structure
 
 ```
-$ babel-node ./importer ./_old/db/bejegyzesek.txt ./admin/db/messages.json
+{
+  authorId: string,
+  publishTime: {
+    timestamp: number,
+    timezone: string
+  },
+  message: Array<BlockNode>
+}
 ```

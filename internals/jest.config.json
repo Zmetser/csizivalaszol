@@ -4,7 +4,7 @@
   "rootDir": "../",
   "roots": [
     "<rootDir>/messageBody/",
-    "<rootDir>/importer/"
+    "<rootDir>/admin/"
   ],
   "testRegex": ".*\\.test\\.js$"
 }

@@ -2,7 +2,7 @@
  * @flow
  */
 
-import type { InlineStyle, InlineNode, TextNode, ImageNode } from '../messageBody/types'
+import type { InlineStyle, InlineNode, TextNode, ImageNode } from '../../../../messageBody/types'
 
 const jsdom = require('jsdom')
 const { JSDOM } = jsdom
@@ -17,13 +17,13 @@ const {
   createLineBreak,
   createLink,
   createImage
-} = require('../messageBody/nodes')
+} = require('../../../../messageBody/nodes')
 
 const {
   nodeName,
   isLineBreak,
   isInlineNode
-} = require('../messageBody/helpers/node')
+} = require('../../../../messageBody/helpers/node')
 
 function containsOnlyWhitespace (element) {
   const contents = element.innerHTML

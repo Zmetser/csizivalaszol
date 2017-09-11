@@ -172,8 +172,8 @@ const authors = {
   },
   '-HIVJnL-aweRQf395IVz': {
     username: 'TeszElek',
-    firstName: '',
-    lastName: ''
+    firstName: 'Elek',
+    lastName: 'Teszt'
   },
   '-HIVJnL-aweRQf395IWb': {
     username: 'Totti',
