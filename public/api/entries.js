@@ -20,8 +20,11 @@ function valueNotFoundError (URL) {
 export function getArchiveEntries (count: number, startAt?: string): Promise<DataSnapshot<Array<EntrySnapshotValue>>> {
   const entries = firebaseApp.database().ref('entries')
 
-  return new Promise((resolve, reject) =>
-    entries.limitToFirst(count).once('value', resolve, reject))
+  return new Promise((resolve, reject) => {
+    const orderedEntries = entries.orderByKey()
+    const entriesStart = startAt ? orderedEntries.startAt(startAt) : orderedEntries
+    return entriesStart.limitToFirst(count).once('value', resolve, reject)
+  })
 }
 
 export function getUser (userId: string): Promise<DataSnapshot<User>> {

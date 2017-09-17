@@ -5,6 +5,8 @@ import last from 'lodash/last'
 import React from 'react'
 import AppBar from 'material-ui/AppBar'
 
+import autobind from 'autobind-decorator'
+
 import Entries from '../../components/Entries'
 
 import { getArchiveEntries, resolveEntries } from '../../api/entries'
@@ -14,24 +16,39 @@ type State = {
   entries: Array<EntryFull>
 };
 
-export default class StreamPage extends React.Component<void, State> {
+type Props = {
+  itemCount: number
+};
+
+export default class StreamPage extends React.Component<Props, State> {
+  static defaultProps = {
+    itemCount: 10
+  };
+
   state = {
     entries: []
   };
 
+  onLoadMoreClick: () => void;
+
   componentDidMount () {
-    this.loadEntries()
+    this.loadEntries().then(entries => {
+      this.setState({ entries })
+    })
   }
 
-  loadEntries () {
-    const { entries } = this.state
-    const startAt = entries.length ? last(entries).id : null
+  loadEntries (startAt?: string) {
+    return getArchiveEntries(this.props.itemCount, startAt).then(resolveEntries)
+  }
 
-    getArchiveEntries(10, startAt)
-      .then(resolveEntries)
-      .then(entries => {
-        this.setState({ entries })
-      })
+  @autobind
+  onLoadMoreClick () {
+    const { entries } = this.state
+    const startAt = last(entries).id
+
+    this.loadEntries(startAt).then(newEntries => {
+      this.setState({ entries: entries.concat(newEntries.slice(1)) })
+    })
   }
 
   render () {
@@ -40,6 +57,7 @@ export default class StreamPage extends React.Component<void, State> {
       <div>
         <AppBar title='Csizi válaszol archívum' showMenuIconButton={false} />
         <Entries entries={entries} />
+        <button onClick={this.onLoadMoreClick}>Load more...</button>
       </div>
     )
   }
