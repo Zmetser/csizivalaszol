@@ -2,7 +2,7 @@
  * @flow
  */
 import last from 'lodash/last'
-import React from 'react'
+import * as React from 'react'
 
 import autobind from 'autobind-decorator'
 
@@ -22,7 +22,7 @@ type Props = {
 
 export default class StreamPage extends React.Component<Props, State> {
   static defaultProps = {
-    itemCount: 10
+    itemCount: 200
   };
 
   state = {
@@ -62,10 +62,10 @@ export default class StreamPage extends React.Component<Props, State> {
     const { entries, loading } = this.state
     // TODO: Loading state
     return (
-      <div>
+      <React.Fragment>
         <Entries entries={entries} />
         <button onClick={this.onLoadMoreClick}>Load more...</button>
-      </div>
+      </React.Fragment>
     )
   }
 }

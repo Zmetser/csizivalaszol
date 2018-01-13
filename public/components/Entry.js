@@ -1,25 +1,51 @@
 import * as React from 'react'
+import styled from 'styled-components'
 
 import renderMessage from '../../messageBody/renderer/renderMessage'
+
+import Time from './Time'
 
 import type { BlockNode } from '../../messageBody/types'
 import type { EntryFull } from '../types'
 
-export default function Entry ({ id, author, publishTime, message }: EntryFull): React.Element<'article'> {
-  const date = new Date(publishTime.timestamp)
-  const datePublished = date.toLocaleDateString('hu-HU')
-  const timePublished = date.toLocaleTimeString('hu-HU')
+const Entry = styled.article`
+  margin-bottom: 25px;
+
+  &:after {
+    content: '';
+    display: block;
+    background-color: #e5e5e5;
+    height: 1px;
+    margin-top: 20px;
+  }
+
+  .byline {}
+  .username {
+    font-weight: bold;
+    margin: 0;
+  }
+  .publishdate {
+    font-size: .8rem;
+  }
+  .message {
+    font-size: 15px;
+
+    & > :last-child {
+      margin-bottom: 0;
+    }
+  }
+`
+
+export default function ({ id, author, publishTime, message }: EntryFull): React.Element<'article'> {
   return (
-    <article className='entry' itemScope itemType='http://schema.org/DiscussionForumPosting'>
-      <div className='entry__byline'>
-        <p className='entry__username' itemProp='author' itemScope itemType='http://schema.org/Person'>
+    <Entry itemScope itemType='http://schema.org/DiscussionForumPosting'>
+      <div className='byline'>
+        <p className='username' itemProp='author' itemScope itemType='http://schema.org/Person'>
           <span itemProp='name'>{author.username}</span>
         </p>
-        <p className='entry__publishdate'>
-          <time itemProp='datePublished' content={publishTime.isoDate} title={`${datePublished} ${timePublished}`}>{datePublished}</time>
-        </p>
+        <Time publishTime={publishTime} className='publishdate' />
       </div>
-      <div className='entry__message' itemProp='articleBody'>{renderMessage(message)}</div>
-    </article>
+      <div className='message' itemProp='articleBody'>{renderMessage(message)}</div>
+    </Entry>
   )
 }
