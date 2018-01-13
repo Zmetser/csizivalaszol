@@ -7,7 +7,8 @@ module.exports = require('./webpack.base')({
     publicPath: '/build/',
     contentBase: path.join(process.cwd(), 'public'),
     compress: true,
-    port: 9000
+    port: 9000,
+    historyApiFallback: true
   },
 
   entry: [

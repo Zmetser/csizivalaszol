@@ -1,8 +1,13 @@
-/**
- * @flow
- */
-import React from 'react'
+// @flow
+
+import * as React from 'react'
 import ReactDOM from 'react-dom'
+
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom'
 
 import styled, { injectGlobal } from 'styled-components'
 
@@ -39,9 +44,11 @@ const Container = styled.div`
 `
 
 ReactDOM.render(
-  <Container>
-    <StreamPage />
-  </Container >
+  <Router>
+    <Container>
+      <Route exact path='/' component={StreamPage} />
+    </Container>
+  </Router>
   ,
   root
 )
