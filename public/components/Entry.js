@@ -27,6 +27,12 @@ const Entry = styled.article`
     font-weight: bold;
     margin: 0;
   }
+  .debug {
+    color: #aaa;
+    font-size: .8rem;
+    font-family: monospace;
+    font-weight: normal;
+  }
   .publishdate {
     color: #aaa;
     font-size: .8rem;
@@ -58,6 +64,7 @@ export default function ({ entry, selected }: Props): React.Element<'article'> {
       <div className='byline'>
         <p className='username' itemProp='author' itemScope itemType='http://schema.org/Person'>
           <span itemProp='name'>{author.username}</span>
+          <span className='debug' itemProp='otherName'>{id}</span>
         </p>
         <Link to={permalink} className='publishdate'>
           <Time publishTime={publishTime} />

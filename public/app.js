@@ -12,7 +12,7 @@ import {
 import { injectGlobal } from 'styled-components'
 
 import Container from './components/Container'
-import Stream from './containers/Stream'
+import Archive from './containers/Archive'
 import Permalink from './containers/Permalink'
 
 const root = document.getElementById('app')
@@ -24,7 +24,7 @@ if (!root) {
 ReactDOM.render(
   <Router>
     <Container>
-      <Route exact path='/' component={Stream} />
+      <Route exact path='/' component={Archive} />
       <Route exact path='/entry/:entryId' component={Permalink} />
     </Container>
   </Router>

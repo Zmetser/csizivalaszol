@@ -23,7 +23,7 @@ export type PublishTime = {
   timezone: string
 }
 
-export type EntryType = {
+export type ResolvedEntry = {
   id: string,
   author: User,
   publishTime: PublishTime,
