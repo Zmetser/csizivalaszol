@@ -12,7 +12,8 @@ import {
 import { injectGlobal } from 'styled-components'
 
 import Container from './components/Container'
-import StreamPage from './containers/StreamPage'
+import Stream from './containers/Stream'
+import Permalink from './containers/Permalink'
 
 const root = document.getElementById('app')
 
@@ -23,7 +24,8 @@ if (!root) {
 ReactDOM.render(
   <Router>
     <Container>
-      <Route exact path='/' component={StreamPage} />
+      <Route exact path='/' component={Stream} />
+      <Route exact path='/entry/:entryId' component={Permalink} />
     </Container>
   </Router>
   ,
