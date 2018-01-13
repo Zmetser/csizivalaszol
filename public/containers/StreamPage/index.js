@@ -4,9 +4,6 @@
 import last from 'lodash/last'
 import React from 'react'
 
-import AppBar from 'material-ui/AppBar'
-import CircularProgress from 'material-ui/CircularProgress'
-
 import autobind from 'autobind-decorator'
 
 import Entries from '../../components/Entries'
@@ -63,11 +60,10 @@ export default class StreamPage extends React.Component<Props, State> {
 
   render () {
     const { entries, loading } = this.state
+    // TODO: Loading state
     return (
       <div>
-        <AppBar title='Csizi válaszol archívum' showMenuIconButton={false} />
         <Entries entries={entries} />
-        {loading && <CircularProgress />}
         <button onClick={this.onLoadMoreClick}>Load more...</button>
       </div>
     )

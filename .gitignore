@@ -2,4 +2,7 @@ _old
 node_modules
 admin/db
 
+debug/
+TODO.md
+
 serviceAccountKey.json
