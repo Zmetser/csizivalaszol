@@ -1,6 +1,6 @@
 /**
  * @flow
- * 
+ *
  * Create a br
  */
 
