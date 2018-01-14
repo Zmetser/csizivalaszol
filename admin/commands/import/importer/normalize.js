@@ -51,7 +51,7 @@ function paragraphizeNodes (nodes) {
 
     if (isInlineNode(node)) {
       const lastNode = openContainer.lastChild
-      openContainer.appendChild(node.cloneNode())
+      openContainer.appendChild(node.cloneNode(true))
 
       if (isLineBreak(node) && lastNode && isLineBreak(lastNode)) {
         return iteratee(iterator, document.createElement('p'), containers.concat([openContainer]))

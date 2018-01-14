@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`export link 1`] = `
+Array [
+  Object {
+    "type": "Paragraph",
+    "value": Array [
+      Object {
+        "href": "http://kvsc.hu",
+        "target": "_blank",
+        "type": "Link",
+        "value": Array [
+          Object {
+            "styles": Array [],
+            "type": "Text",
+            "value": "link text",
+          },
+        ],
+      },
+    ],
+  },
+]
+`;
