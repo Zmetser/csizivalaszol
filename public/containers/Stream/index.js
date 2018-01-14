@@ -8,7 +8,7 @@ import autobind from 'autobind-decorator'
 
 import Entry from '../../components/Entry'
 
-import { getArchiveEntries, resolveEntries } from '../../api/entries'
+import { getEntriesFrom } from '../../api/entries'
 import type { EntryFull } from '../../types'
 
 type State = {
@@ -49,7 +49,7 @@ export default class StreamPage extends React.Component<Props, State> {
   }
 
   loadEntries (startAt?: string) {
-    return getArchiveEntries(this.props.itemCount, startAt).then(resolveEntries)
+    return getEntriesFrom(this.props.itemCount, startAt)
   }
 
   @autobind

@@ -4,6 +4,8 @@
 
 import firebaseApp from '../firebaseApp'
 
+import flatMap from 'lodash/flatMap'
+
 import type { EntrySnapshotValue, EntryType, User } from '../types'
 
 function getISODate (timestamp) {
@@ -17,13 +19,42 @@ function valueNotFoundError (URL) {
   }
 }
 
-export function getArchiveEntries (count: number, startAt?: string): Promise<DataSnapshot<Array<EntrySnapshotValue>>> {
-  const entries = firebaseApp.database().ref('entries')
+/**
+ * Return count number of entries starting at startAt or at the first item
+ */
+export function getEntriesFrom (count: number, startAt?: string): Promise<Array<EntrySnapshotValue>> {
+  const entries = firebaseApp.database().ref('entries').orderByKey()
 
-  return new Promise((resolve, reject) => {
-    const orderedEntries = entries.orderByKey()
-    const entriesStart = startAt ? orderedEntries.startAt(startAt) : orderedEntries
-    return entriesStart.limitToFirst(count).once('value', resolve, reject)
+  const entriesStart = startAt ? entries.startAt(startAt) : entries
+  return entriesStart.limitToFirst(count).once('value').then(resolveEntries)
+}
+
+/**
+ * Return count number of entries until reaching endAt or the last entry
+ */
+export function getEntriesUntil (count: number, endAt?: string): Promise<Array<EntrySnapshotValue>> {
+  const entries = firebaseApp.database().ref('entries').orderByKey()
+
+  const entriesEnd = endAt ? entries.endAt(endAt) : entries
+  return entriesEnd.limitToLast(count).once('value').then(resolveEntries)
+}
+
+/**
+ * Return count number of entries around the entryId
+ * If count is 2 this method returns 3 items:
+ * 1 item before entryId, entryId and 1 item after entryId
+ */
+export function getEntriesAround (entryId: string, count: number): Promise<Array<EntrySnapshotValue>> {
+  const limit = count / 2 + 1
+  const entries = firebaseApp.database().ref('entries').orderByKey()
+
+  const beforeEntry = entries.endAt(entryId).limitToLast(limit).once('value') // [...entry]
+  const afterEntry = entries.startAt(entryId).limitToFirst(limit).once('value') // [entry...]
+
+  return Promise.all([beforeEntry, afterEntry]).then((snapshots) => {
+    return Promise.all(snapshots.map(resolveEntries)) // [...entry,entry...]
+      // concat items and remove duplicate entry with entryId key
+      .then(([beforeEntry, afterEntry]) => beforeEntry.concat(afterEntry.slice(1)))
   })
 }
 
