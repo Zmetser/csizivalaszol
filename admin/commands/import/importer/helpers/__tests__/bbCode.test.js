@@ -4,15 +4,27 @@
 
 const transform = require('../bbCode')
 
-describe('Export emoticon', () => {
+describe('Transform bbcodes', () => {
   test('[b]', () => {
     const result = transform('[b]should be bold[/b]')
     expect(result).toEqual('<strong>should be bold</strong>')
   })
 
-  test('[size]', () => {
-    const result = transform('[size=10][color=red]Olibaggio[/color][/size]')
-    expect(result).toEqual('')
+  describe('Admin message', () => {
+    test('variant 1', () => {
+      const result = transform('[size=10][color=red]Olibaggio[/color][/size]')
+      expect(result).toEqual('')
+    })
+
+    test('variant 2', () => {
+      const result = transform('[size=10][color=red]Olibaggio[/size][/color]')
+      expect(result).toEqual('')
+    })
+
+    test('announcement', () => {
+      const result = transform('[size=18px]Nyílt hét van a Csizi válaszolban![/size] Ami azt jeleni')
+      expect(result).toEqual('<strong>Nyílt hét van a Csizi válaszolban!</strong> Ami azt jeleni')
+    })
   })
 
   test('[url=$1]$2[/url]', () => {
