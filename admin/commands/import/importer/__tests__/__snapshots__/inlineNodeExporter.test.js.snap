@@ -1,0 +1,82 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`line breaks exporter should create a paragraph on double line break and remove brs 1`] = `
+Array [
+  Object {
+    "type": "Paragraph",
+    "value": Array [
+      Object {
+        "styles": Array [],
+        "type": "Text",
+        "value": "Na sziasz!",
+      },
+    ],
+  },
+  Object {
+    "type": "Paragraph",
+    "value": Array [
+      Object {
+        "styles": Array [],
+        "type": "Text",
+        "value": "KÉRDÉS",
+      },
+    ],
+  },
+]
+`;
+
+exports[`line breaks exporter should preserve single br 1`] = `
+Array [
+  Object {
+    "type": "Paragraph",
+    "value": Array [
+      Object {
+        "styles": Array [],
+        "type": "Text",
+        "value": "Na sziasz!",
+      },
+      Object {
+        "type": "LineBreak",
+      },
+      Object {
+        "styles": Array [],
+        "type": "Text",
+        "value": "KÉRDÉS",
+      },
+      Object {
+        "type": "LineBreak",
+      },
+      Object {
+        "styles": Array [],
+        "type": "Text",
+        "value": "asd",
+      },
+    ],
+  },
+]
+`;
+
+exports[`line breaks exporter should remove br from the beginning of the paragraph 1`] = `
+Array [
+  Object {
+    "type": "Paragraph",
+    "value": Array [
+      Object {
+        "styles": Array [],
+        "type": "Text",
+        "value": "Na sziasz!",
+      },
+    ],
+  },
+  Object {
+    "type": "Paragraph",
+    "value": Array [
+      Object {
+        "styles": Array [],
+        "type": "Text",
+        "value": "KÉRDÉS",
+      },
+    ],
+  },
+]
+`;

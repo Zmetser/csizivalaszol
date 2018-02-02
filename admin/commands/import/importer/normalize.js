@@ -12,6 +12,8 @@ import type {
   ListNode
 } from '../../../../messageBody/types'
 
+const { last } = require('lodash')
+
 const jsdom = require('jsdom')
 const { JSDOM } = jsdom
 const { window } = new JSDOM('')
@@ -51,10 +53,15 @@ function paragraphizeNodes (nodes) {
 
     if (isInlineNode(node)) {
       const lastNode = openContainer.lastChild
-      openContainer.appendChild(node.cloneNode(true))
 
-      if (isLineBreak(node) && lastNode && isLineBreak(lastNode)) {
+      if (lastNode && isLineBreak(node) && isLineBreak(lastNode)) {
+        openContainer.lastChild.remove()
         return iteratee(iterator, document.createElement('p'), containers.concat([openContainer]))
+      }
+
+      // Paragraph should never start with a line break
+      if (lastNode || !isLineBreak(node)) {
+        openContainer.appendChild(node.cloneNode(true))
       }
 
       return iteratee(iterator, openContainer, containers)
@@ -173,9 +180,9 @@ function exportImage (imageElement: HTMLImageElement): TextNode | ImageNode | nu
 
       const imageAttributes = {
         src,
-        ...(alt ? {alt} : null),
-        ...(width ? {width} : null),
-        ...(height ? {height} : null)
+        ...(alt ? { alt } : null),
+        ...(width ? { width } : null),
+        ...(height ? { height } : null)
       }
 
       return createImage(imageAttributes)
