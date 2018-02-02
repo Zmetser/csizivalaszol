@@ -1,7 +1,7 @@
 /**
  * @flow
  */
-import last from 'lodash/last'
+import { last } from 'lodash'
 import * as React from 'react'
 
 import autobind from 'autobind-decorator'

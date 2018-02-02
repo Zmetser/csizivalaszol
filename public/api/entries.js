@@ -4,7 +4,7 @@
 
 import firebaseApp from '../firebaseApp'
 
-import flatMap from 'lodash/flatMap'
+import { flatMap } from 'lodash'
 
 import type { EntrySnapshotValue, ResolvedEntry, User } from '../types'
 
