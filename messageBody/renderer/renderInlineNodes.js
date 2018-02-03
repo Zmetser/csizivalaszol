@@ -15,8 +15,8 @@ import {
 
 function createInlineNode (node: InlineNode, index): React.Element<*> {
   switch (node.type) {
-    case 'Text': return Text(node, index)
-    case 'Link': return <Link {...node} key={index} />
+    case 'Text': return <Text node={node} key={index} />
+    case 'Link': return <Link node={node} key={index} />
     case 'LineBreak': return <LineBreak key={index} />
     default: throw new UnknownNodeError(node)
   }

@@ -14,6 +14,8 @@ exports[`<Text /> apply styles 1`] = `
 </strong>
 `;
 
+exports[`<Text /> render without formatting 1`] = `"Foo"`;
+
 exports[`<Text /> text with "Bold" style renders with the correct element 1`] = `
 <strong>
   Bold

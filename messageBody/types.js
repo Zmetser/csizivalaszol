@@ -48,6 +48,7 @@ export type ImageNode = {
 } & ImageAttributes;
 
 export type ListType = 'Bullet' | 'Number'
+export type ListTypes = ListNode<'Bullet'> | ListNode<'Number'>
 export type ListItem = Array<InlineNode>
 export type ListNode<T: ListType> = {
   type: 'List',
@@ -55,4 +56,4 @@ export type ListNode<T: ListType> = {
   items: Array<ListItem>
 }
 
-export type BlockNode = ParagraphNode | ListNode<'Bullet'> | ListNode<'Number'>;
+export type BlockNode = ParagraphNode | ListTypes;

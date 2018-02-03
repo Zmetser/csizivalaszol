@@ -1,9 +1,11 @@
 /**
  * @flow
  */
+import * as React from 'react'
 import renderer from 'react-test-renderer'
 
 import {
+  createParagraph,
   createTextNode,
   createLink
 } from '../../nodes.js'
@@ -16,14 +18,14 @@ const fooLink = createLink([fooText], '#')
 describe('<Paragraph />', () => {
   test('with text', () => {
     const element = renderer.create(
-      Paragraph({ value: [fooText] }, 0)
+      <Paragraph node={createParagraph([fooText])} />
     )
     expect(element.toJSON()).toMatchSnapshot()
   })
 
   test('with text, link and text', () => {
     const element = renderer.create(
-      Paragraph({ value: [fooText, fooLink, fooText] }, 0)
+      <Paragraph node={createParagraph([fooText, fooLink, fooText])} />
     )
     expect(element.toJSON()).toMatchSnapshot()
   })
@@ -35,7 +37,7 @@ describe('<Paragraph />', () => {
       createTextNode('Small and Code', ['Small', 'Code'])
     ]
     const element = renderer.create(
-      Paragraph({ value }, 0)
+      <Paragraph node={createParagraph(value)} />
     )
     expect(element.toJSON()).toMatchSnapshot()
   })

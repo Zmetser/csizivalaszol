@@ -1,11 +1,15 @@
 /**
  * @flow
  */
+import * as React from 'react'
 import renderer from 'react-test-renderer'
 
 import Link from '../Link'
 
-import { createTextNode } from '../../nodes.js'
+import {
+  createTextNode,
+  createLink
+} from '../../nodes.js'
 
 const fooText = createTextNode('Foo', [])
 const fooTextItalic = createTextNode('Foo', ['Italic'])
@@ -13,28 +17,28 @@ const fooTextItalic = createTextNode('Foo', ['Italic'])
 describe('<a />', () => {
   test('link', () => {
     const element = renderer.create(
-      Link({ value: [fooText], href: '#' })
+      <Link node={createLink([fooText], '#')} />
     )
     expect(element.toJSON()).toMatchSnapshot()
   })
 
   test('link with "_blank" target', () => {
     const element = renderer.create(
-      Link({ value: [fooText], href: '#', target: '_blank' })
+      <Link node={createLink([fooText], '#', '_blank')} />
     )
     expect(element.toJSON()).toMatchSnapshot()
   })
 
   test('link with styled content', () => {
     const element = renderer.create(
-      Link({ value: [fooTextItalic], href: '#', target: '_blank' })
+      <Link node={createLink([fooTextItalic], '#', '_blank')} />
     )
     expect(element.toJSON()).toMatchSnapshot()
   })
 
   test('link with a list of values', () => {
     const element = renderer.create(
-      Link({ value: [fooTextItalic, fooTextItalic, fooTextItalic], href: '#', target: '_blank' })
+      <Link node={createLink([fooTextItalic, fooTextItalic, fooTextItalic], '#', '_blank')} />
     )
     expect(element.toJSON()).toMatchSnapshot()
   })

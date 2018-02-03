@@ -8,7 +8,10 @@ import * as React from 'react'
 import type { LinkNode } from '../types'
 import Text from './Text'
 
-export default function Link ({ value, href, target }: $Shape<LinkNode>): React.Element<'a'> {
+
+type Props = { node: LinkNode }
+export default function Link ({ node }: Props): React.Element<'a'> {
+  const { value, href, target } = node
   const props = Object.assign({}, target ? { target } : null)
-  return <a href={href} {...props}>{value.map(Text)}</a>
+  return <a href={href} {...props}>{value.map((node, index) => <Text node={node} key={index} />)}</a>
 }

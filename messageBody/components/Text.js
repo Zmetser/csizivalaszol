@@ -21,8 +21,11 @@ function inlineStyleToTag (styleName: InlineStyle): string {
   }
 }
 
-export default function Text ({ value, styles = [] }: $Shape<TextNode>, key: React.Key): React.Element<*> | string {
+type Props = { node: TextNode }
+export default function Text ({ node }: Props): React.Element<*> | string {
+  const { value, styles = [] } = node
   const reversedStyles = styles.slice().reverse()
+
   return reversedStyles.reduce((prev, styleName, index) =>
-    React.createElement(inlineStyleToTag(styleName), { key: styleName + key }, prev), value)
+    React.createElement(inlineStyleToTag(styleName), { key: styleName }, prev), value)
 }
