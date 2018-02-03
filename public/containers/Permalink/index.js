@@ -16,7 +16,7 @@ function loadEntries (entryId?: string): Promise<Array<ResolvedEntry>> {
   return getEntriesAround(12, entryId)
 }
 
-export default ({ match }: { match: Match }) => {
+export default function Permalink ({ match }: { match: Match }) {
   const { params } = match
 
   const props = {}

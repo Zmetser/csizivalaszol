@@ -25,7 +25,7 @@ type Props = {
   nextButton?: string
 }
 
-export default class StreamPage extends React.Component<Props, State> {
+export default class Stream extends React.Component<Props, State> {
   static defaultProps = {
     itemCount: 200
   }

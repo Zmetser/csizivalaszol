@@ -11,9 +11,9 @@ function loadEntries (entryId?: string): Promise<Array<ResolvedEntry>> {
   return getEntriesFrom(10, entryId)
 }
 
-export default () => (
-  <Stream
+export default function Archive () {
+  return <Stream
     loadEntries={loadEntries}
     nextButton='Nem elég Csiziből'
   />
-)
+}

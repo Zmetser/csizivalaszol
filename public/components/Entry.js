@@ -10,7 +10,7 @@ import Time from './Time'
 import type { BlockNode } from '../../messageBody/types'
 import type { EntryFull } from '../types'
 
-const Entry = styled.article`
+const StyledEntry = styled.article`
   margin-bottom: 25px;
   background-color: ${props => props.selected ? '#fafafa' : 'transparent'};
 
@@ -51,16 +51,18 @@ const Entry = styled.article`
   }
 `
 
+StyledEntry.displayName = 'StyledEntry'
+
 type Props = {
   entry: EntryFull,
   selected?: boolean
 }
-export default function ({ entry, selected }: Props): React.Element<'article'> {
+export default function Entry ({ entry, selected }: Props): React.Element<'article'> {
   const { id, author, publishTime, message } = entry
   const permalink = `/entry/${id}`
 
   return (
-    <Entry selected={selected} itemScope itemType='http://schema.org/DiscussionForumPosting'>
+    <StyledEntry selected={selected} itemScope itemType='http://schema.org/DiscussionForumPosting'>
       <div className='byline'>
         <p className='username' itemProp='author' itemScope itemType='http://schema.org/Person'>
           <span itemProp='name'>{author.username}</span>
@@ -71,6 +73,6 @@ export default function ({ entry, selected }: Props): React.Element<'article'> {
         </Link>
       </div>
       <div className='message' itemProp='articleBody'>{renderMessage(message)}</div>
-    </Entry>
+    </StyledEntry>
   )
 }
