@@ -7,7 +7,7 @@
   "scripts": {
     "start": "cross-env NODE_ENV=development node_modules/.bin/webpack-dev-server --config ./internals/webpack/webpack.dev.js",
     "lint": "./node_modules/.bin/eslint . --ignore-path .eslintignore --ignore-pattern internals/",
-    "test": "jest --notify --config ./internals/jest.config.json",
+    "test": "jest --config ./internals/jest.config.json",
     "admin": "babel-node ./admin"
   },
   "dependencies": {
