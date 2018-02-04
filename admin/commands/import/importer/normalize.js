@@ -19,7 +19,11 @@ const { JSDOM } = jsdom
 const { window } = new JSDOM('')
 const { document, Element, HTMLImageElement, HTMLUListElement, HTMLOListElement } = window
 
-const { isEmoticon, emoticonImageToUnicode } = require('./helpers/emoticon')
+const {
+  isEmoticon,
+  emoticonImageToUnicode,
+  asciiEmoticonToUnicode
+} = require('./helpers/emoticon')
 
 const {
   createTextNode,
@@ -102,7 +106,7 @@ function exportTextNodes (nodes: NodeList<Node>): Array<TextNode> {
   const traverse = (iterator: Iterator<[number, Node]>, styles: Array<InlineStyle>, memo: Array<TextNode>) => {
     for (const [, node] of iterator) {
       if (nodeName(node) === '#text') {
-        memo.push(createTextNode(node.textContent, styles))
+        memo.push(createTextNode(asciiEmoticonToUnicode(node.textContent), styles))
       } else {
         traverse(node.childNodes.entries(), styles, memo)
       }
@@ -118,7 +122,7 @@ function exportInlineNodes (nodes: NodeList<Node>): Array<InlineNode> {
     for (const [, node] of iterator) {
       switch (nodeName(node)) {
         case '#text':
-          memo.push(createTextNode(node.textContent, styles))
+          memo.push(createTextNode(asciiEmoticonToUnicode(node.textContent), styles))
           break
         case 'a':
           if (node instanceof Element) {
