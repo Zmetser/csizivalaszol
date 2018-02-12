@@ -71,7 +71,8 @@ const exportEntry = new Transform({
         timestamp: post.timestamp * 1000,
         timezone: 'Europe/Budapest'
       },
-      message: post.message
+      message: post.message,
+      archived: true
     }))
   }
 })

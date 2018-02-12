@@ -17,7 +17,7 @@ to
   importer(inputFile, outputFile).then(() => {
     console.info('Loading entries to firebase')
 
-    const entriesRef = db.ref('entries')
+    const entriesRef = db.ref('entriesArchive')
     const entries = require(outputFile)
 
     entriesRef.update(entries, (error) => {
