@@ -6,8 +6,6 @@ import * as React from 'react'
 
 import autobind from 'autobind-decorator'
 
-import { getEntriesFrom, getEntriesUntil } from '../api/entries'
-
 import Entry from '../components/Entry'
 
 import type { ResolvedEntry, EntrySnapshotValue } from '../types'
@@ -21,6 +19,8 @@ type State = {
 type Props = {
   entryId?: string,
   loadEntries: (entryId?: string) => Promise<Array<ResolvedEntry>>,
+  loadMore?: (entryId: string) => Promise<Array<ResolvedEntry>>,
+  loadPrev?: (entryId: string) => Promise<Array<ResolvedEntry>>,
   prevButton?: string,
   nextButton?: string
 }
@@ -59,15 +59,21 @@ export default class Stream extends React.Component<Props, State> {
   @autobind
   onLoadMoreClick () {
     const { id } = last(this.state.entries)
-    getEntriesFrom(10, id)
-      .then(entries => this.setState({ entries: this.state.entries.concat(entries.slice(1)) }))
+
+    if (this.props.loadMore) {
+      this.props.loadMore(id)
+        .then(entries => this.setState({ entries: this.state.entries.concat(entries.slice(1)) }))
+    }
   }
 
   @autobind
   onLoadPrevClick () {
     const { id } = this.state.entries[0]
-    getEntriesUntil(10, id)
-      .then(entries => this.setState({ entries: entries.concat(this.state.entries.slice(1)) }))
+
+    if (this.props.loadPrev) {
+      this.props.loadPrev(id)
+        .then(entries => this.setState({ entries: entries.concat(this.state.entries.slice(1)) }))
+    }
   }
 
   render () {
