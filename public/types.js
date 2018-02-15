@@ -8,13 +8,10 @@ export type EntrySnapshotValue = {
     timestamp: number,
     timezone: string
   },
-  message: Array<BlockNode>
-}
-
-export type User = {
-  username: string,
-  firstName: string,
-  lastName: string
+  message: Array<BlockNode>,
+  archived?: boolean,
+  replyTo?: string,
+  replies?: Array<string>
 }
 
 export type PublishTime = {

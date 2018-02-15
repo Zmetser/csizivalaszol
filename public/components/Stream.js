@@ -9,18 +9,19 @@ import autobind from 'autobind-decorator'
 import Entry from '../components/Entry'
 
 import type { ResolvedEntry, EntrySnapshotValue } from '../types'
+import type { EntryId } from '../models/EntryId'
 
 type State = {
   loading: boolean,
   entries: Array<ResolvedEntry>,
-  currentEntryId?: string
+  currentEntryId?: EntryId
 }
 
 type Props = {
-  entryId?: string,
-  loadEntries: (entryId?: string) => Promise<Array<ResolvedEntry>>,
-  loadMore?: (entryId: string) => Promise<Array<ResolvedEntry>>,
-  loadPrev?: (entryId: string) => Promise<Array<ResolvedEntry>>,
+  entryId?: EntryId,
+  loadEntries: (entryId?: EntryId) => Promise<Array<ResolvedEntry>>,
+  loadMore?: (entryId: EntryId) => Promise<Array<ResolvedEntry>>,
+  loadPrev?: (entryId: EntryId) => Promise<Array<ResolvedEntry>>,
   prevButton?: string,
   nextButton?: string
 }
@@ -43,7 +44,7 @@ export default class Stream extends React.Component<Props, State> {
     }
   }
 
-  loadEntries (startingFromId?: string) {
+  loadEntries (startingFromId?: EntryId) {
     this.setState({ loading: true })
     return this.props.loadEntries(startingFromId).then(entries => {
       this.setState({ loading: false })

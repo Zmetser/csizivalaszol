@@ -6,11 +6,13 @@ import firebaseApp from '../firebaseApp'
 
 import { flatMap } from 'lodash'
 
-import type { EntrySnapshotValue, ResolvedEntry, User } from '../types'
+import Entry from '../models/Entry'
+import User from '../models/User'
+import { toUserId } from '../models/UserId'
 
-function getISODate (timestamp) {
-  return (new Date(timestamp)).toISOString().split('T')[0]
-}
+import type { EntrySnapshotValue, ResolvedEntry } from '../types'
+import type { UserId } from '../models/UserId'
+import type { EntryId } from '../models/EntryId'
 
 function valueNotFoundError (URL) {
   return {
@@ -31,7 +33,7 @@ export default class Entries {
   /**
    * Return count number of entries starting at startAt or at the first item
    */
-  getEntriesFrom (count: number, startAt?: string): Promise<Array<ResolvedEntry>> {
+  getEntriesFrom (count: number, startAt?: EntryId): Promise<Array<ResolvedEntry>> {
     const entries = startAt ? this.ref.startAt(startAt) : this.ref
     return entries.limitToFirst(count).once('value').then(resolveEntries)
   }
@@ -39,7 +41,7 @@ export default class Entries {
   /**
    * Return count number of entries until reaching endAt or the last entry
    */
-  getEntriesUntil (count: number, endAt?: string): Promise<Array<ResolvedEntry>> {
+  getEntriesUntil (count: number, endAt?: EntryId): Promise<Array<ResolvedEntry>> {
     const entries = endAt ? this.ref.endAt(endAt) : this.ref
     return entries.limitToLast(count).once('value').then(resolveEntries)
   }
@@ -49,7 +51,7 @@ export default class Entries {
    * If count is 2 this method returns 3 items:
    * 1 item before entryId, entryId and 1 item after entryId
    */
-  getEntriesAround (count: number, entryId: string): Promise<Array<ResolvedEntry>> {
+  getEntriesAround (count: number, entryId: EntryId): Promise<Array<ResolvedEntry>> {
     const limit = Math.round(count / 2) + 1
 
     const beforeEntry = this.ref.endAt(entryId).limitToLast(limit).once('value') // [...entry]
@@ -63,11 +65,12 @@ export default class Entries {
   }
 }
 
-function getUser (userId: string): Promise<DataSnapshot<User>> {
+function getUser (id: UserId): Promise<User> {
   return new Promise((resolve, reject) =>
-    firebaseApp.database().ref('users').child(userId).once('value', (snapshot) => {
-      if (snapshot.val()) {
-        resolve(snapshot)
+    firebaseApp.database().ref('users').child(id).once('value', (snapshot) => {
+      const user = snapshot.val()
+      if (user) {
+        resolve(new User({ id, ...user }))
       } else {
         reject(valueNotFoundError(snapshot.ref.toString()))
       }
@@ -75,13 +78,17 @@ function getUser (userId: string): Promise<DataSnapshot<User>> {
 }
 
 function resolveEntry (dataSnapshot: DataSnapshot<EntrySnapshotValue>): Promise<ResolvedEntry> {
-  const entry: EntrySnapshotValue = dataSnapshot.val()
-  const entryWithAuthor = getUser(entry.authorId).then((author) => ({
-    id: dataSnapshot.key,
-    author: author.val(),
-    publishTime: ({ ...entry.publishTime, dateISO: getISODate(entry.publishTime.timestamp) }),
-    message: entry.message
-  }))
+  const id = dataSnapshot.key
+
+  if (!id) {
+    throw new Error('snapshot has no key')
+  }
+
+  const entry = dataSnapshot.val()
+  const entryWithAuthor = getUser(toUserId(entry.authorId)).then((author: User) => {
+    const { authorId, ...entryWithoutAuthorId } = entry
+    return new Entry({ id, author, ...entryWithoutAuthorId })
+  })
 
   return entryWithAuthor
 }
