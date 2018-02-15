@@ -56,9 +56,7 @@ const authors = {
     lastName: 'Pálfalvai'
   },
   '-HIVJnL-aweRQf395IVc': {
-    username: 'Angyalka',
-    firstName: '',
-    lastName: ''
+    username: 'Angyalka'
   },
   '-HIVJnL-aweRQf395IVe': {
     username: 'Anita',
@@ -71,9 +69,7 @@ const authors = {
     lastName: 'Horváth'
   },
   '-HIVJnL-aweRQf395IVg': {
-    username: 'Cápali',
-    firstName: '',
-    lastName: ''
+    username: 'Cápali'
   },
   '-HIVJnL-aweRQf395IVh': {
     username: 'csernai misike',
@@ -81,9 +77,7 @@ const authors = {
     lastName: 'Csernai'
   },
   '-HIVJnL-aweRQf395IVi': {
-    username: 'csirek',
-    firstName: '',
-    lastName: ''
+    username: 'csirek'
   },
   '-HIVJnL-aweRQf395IVj': {
     username: 'Csizibaggio',
@@ -96,14 +90,10 @@ const authors = {
     lastName: 'Környei'
   },
   '-HIVJnL-aweRQf395IVl': {
-    username: 'dinnye',
-    firstName: '',
-    lastName: ''
+    username: 'dinnye'
   },
   '-HIVJnL-aweRQf395IVn': {
-    username: 'DoDó',
-    firstName: '',
-    lastName: ''
+    username: 'DoDó'
   },
   '-HIVJnL-aweRQf395IVm': {
     username: 'hehebaggio',
@@ -111,19 +101,13 @@ const authors = {
     lastName: 'Horváth'
   },
   '-HIVJnL-aweRQf395IVo': {
-    username: 'Krisztofóró',
-    firstName: '',
-    lastName: ''
+    username: 'Krisztofóró'
   },
   '-HIVJnL-aweRQf395IVp': {
-    username: 'Luigi',
-    firstName: '',
-    lastName: ''
+    username: 'Luigi'
   },
   '-HIVJnL-aweRQf395IVq': {
-    username: 'Misike',
-    firstName: '',
-    lastName: ''
+    username: 'Misike'
   },
   '-HIVJnL-aweRQf395IXy': {
     username: 'mucsabaggio',
@@ -131,9 +115,7 @@ const authors = {
     lastName: 'Faludy'
   },
   '-HIVJnL-aweRQf395IYz': {
-    username: '',
-    firstName: '',
-    lastName: ''
+    username: ''
   },
   '-HIVJnL-aweRQf395IVr': {
     username: 'Olibaggio',
@@ -146,14 +128,10 @@ const authors = {
     lastName: 'Csernai'
   },
   '-HIVJnL-aweRQf395IVt': {
-    username: 'patrik',
-    firstName: '',
-    lastName: ''
+    username: 'patrik'
   },
   '-HIVJnL-aweRQf395IVv': {
-    username: 'PETRA',
-    firstName: '',
-    lastName: ''
+    username: 'PETRA'
   },
   '-HIVJnL-aweRQf395IVw': {
     username: 'Roba',
@@ -161,14 +139,10 @@ const authors = {
     lastName: 'Kovács'
   },
   '-HIVJnL-aweRQf395IVx': {
-    username: 'ropi',
-    firstName: '',
-    lastName: ''
+    username: 'ropi'
   },
   '-HIVJnL-aweRQf395IVy': {
-    username: 'somavazze',
-    firstName: '',
-    lastName: ''
+    username: 'somavazze'
   },
   '-HIVJnL-aweRQf395IVz': {
     username: 'TeszElek',
@@ -176,9 +150,7 @@ const authors = {
     lastName: 'Teszt'
   },
   '-HIVJnL-aweRQf395IWb': {
-    username: 'Totti',
-    firstName: '',
-    lastName: ''
+    username: 'Totti'
   },
   '-HIVJnL-aweRQf395IWc': {
     username: 'Zuzu',
