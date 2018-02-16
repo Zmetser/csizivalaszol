@@ -65,7 +65,7 @@ export default function Entry ({ entry, selected }: Props): React.Element<'artic
     <StyledEntry selected={selected} itemScope itemType='http://schema.org/DiscussionForumPosting'>
       <div className='byline'>
         <p className='username' itemProp='author' itemScope itemType='http://schema.org/Person'>
-          <span itemProp='name'>{author.username}</span>
+          <span itemProp='name'>{author.displayName}</span>
           <span className='debug' itemProp='otherName'>{id}</span>
         </p>
         <Link to={permalink} className='publishdate'>

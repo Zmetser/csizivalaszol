@@ -3,17 +3,9 @@
 import * as React from 'react'
 import ReactDOM from 'react-dom'
 
-import {
-  BrowserRouter as Router,
-  Route,
-  Link
-} from 'react-router-dom'
-
 import { injectGlobal } from 'styled-components'
 
-import Container from './components/Container'
-import Archive from './containers/Archive'
-import Permalink from './containers/Permalink'
+import App from './containers/App'
 
 const root = document.getElementById('app')
 
@@ -21,16 +13,7 @@ if (!root) {
   throw new Error('Application root element can not be found!')
 }
 
-ReactDOM.render(
-  <Router>
-    <Container>
-      <Route exact path='/' component={Archive} />
-      <Route exact path='/entry/:entryId' component={Permalink} />
-    </Container>
-  </Router>
-  ,
-  root
-)
+ReactDOM.render(<App />, root)
 
 injectGlobal`
   body {

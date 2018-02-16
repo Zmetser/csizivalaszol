@@ -17,4 +17,18 @@ const config = {
   messagingSenderId: '634906101849'
 }
 
+export function facebookAuth () {
+  const provider = new firebase.auth.FacebookAuthProvider()
+  const auth = firebase.auth()
+
+  return auth.signInWithPopup(provider).catch(error => {
+    console.error(error)
+    throw new Error('AUTH_ERROR')
+  })
+}
+
+export function signOut () {
+  firebase.auth().signOut()
+}
+
 export default firebase.initializeApp(config)

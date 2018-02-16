@@ -27,7 +27,7 @@ const usernameToID = {
   'Olibaggio': '-HIVJnL-aweRQf395IVr',
   'Panka': '-HIVJnL-aweRQf395IVs',
   'patrik': '-HIVJnL-aweRQf395IVt',
-  'PETRA': '-HIVJnL-aweRQf395IVv',
+  'Petra': '-HIVJnL-aweRQf395IVv',
   'Roba': '-HIVJnL-aweRQf395IVw',
   'roba': '-HIVJnL-aweRQf395IVw',
   'ropi': '-HIVJnL-aweRQf395IVx',
@@ -41,121 +41,91 @@ const usernameToID = {
 
 const authors = {
   '-HIVJoZ7Sa0qEdEA_og0': {
-    username: 'Anonymous',
-    firstName: 'John',
-    lastName: 'Doe'
+    displayName: 'Anonymous'
   },
   '-HIVJnL-aweRQf395IVa': {
-    username: 'Ákos',
-    firstName: 'Ákos',
-    lastName: 'Angyal'
+    displayName: 'Ákos'
   },
   '-HIVJnL-aweRQf395IVb': {
-    username: 'andriska',
-    firstName: 'András',
-    lastName: 'Pálfalvai'
+    displayName: 'andriska'
   },
   '-HIVJnL-aweRQf395IVc': {
-    username: 'Angyalka'
+    displayName: 'Angyalka'
   },
   '-HIVJnL-aweRQf395IVe': {
-    username: 'Anita',
-    firstName: 'Anita',
-    lastName: 'Kohulák'
+    displayName: 'Anita'
   },
   '-HIVJnL-aweRQf395IVf': {
-    username: 'Atosz',
-    firstName: 'Attila',
-    lastName: 'Horváth'
+    displayName: 'Atosz'
   },
   '-HIVJnL-aweRQf395IVg': {
-    username: 'Cápali'
+    displayName: 'Cápali'
   },
   '-HIVJnL-aweRQf395IVh': {
-    username: 'csernai misike',
-    firstName: 'Mihály',
-    lastName: 'Csernai'
+    displayName: 'csernai misike'
   },
   '-HIVJnL-aweRQf395IVi': {
-    username: 'csirek'
+    displayName: 'csirek'
   },
   '-HIVJnL-aweRQf395IVj': {
-    username: 'Csizibaggio',
-    firstName: 'Ferenc',
-    lastName: 'Csima'
+    displayName: 'Csizibaggio'
   },
   '-HIVJnL-aweRQf395IVk': {
-    username: 'Dingo',
-    firstName: 'Gergő',
-    lastName: 'Környei'
+    displayName: 'Dingo'
   },
   '-HIVJnL-aweRQf395IVl': {
-    username: 'dinnye'
+    displayName: 'dinnye'
   },
   '-HIVJnL-aweRQf395IVn': {
-    username: 'DoDó'
+    displayName: 'DoDó'
   },
   '-HIVJnL-aweRQf395IVm': {
-    username: 'hehebaggio',
-    firstName: 'Gergő',
-    lastName: 'Horváth'
+    displayName: 'hehebaggio'
   },
   '-HIVJnL-aweRQf395IVo': {
-    username: 'Krisztofóró'
+    displayName: 'Krisztofóró'
   },
   '-HIVJnL-aweRQf395IVp': {
-    username: 'Luigi'
+    displayName: 'Luigi'
   },
   '-HIVJnL-aweRQf395IVq': {
-    username: 'Misike'
+    displayName: 'Misike'
   },
   '-HIVJnL-aweRQf395IXy': {
-    username: 'mucsabaggio',
-    firstName: 'András',
-    lastName: 'Faludy'
+    displayName: 'mucsabaggio'
   },
   '-HIVJnL-aweRQf395IYz': {
-    username: ''
+    displayName: '[????]'
   },
   '-HIVJnL-aweRQf395IVr': {
-    username: 'Olibaggio',
-    firstName: 'Olivér',
-    lastName: 'Kovács'
+    displayName: 'Olibaggio'
   },
   '-HIVJnL-aweRQf395IVs': {
-    username: 'Panka',
-    firstName: 'Anna',
-    lastName: 'Csernai'
+    displayName: 'Panka'
   },
   '-HIVJnL-aweRQf395IVt': {
-    username: 'patrik'
+    displayName: 'patrik'
   },
   '-HIVJnL-aweRQf395IVv': {
-    username: 'PETRA'
+    displayName: 'Petra'
   },
   '-HIVJnL-aweRQf395IVw': {
-    username: 'Roba',
-    firstName: 'Róbert',
-    lastName: 'Kovács'
+    displayName: 'Roba'
   },
   '-HIVJnL-aweRQf395IVx': {
-    username: 'ropi'
+    displayName: 'ropi'
   },
   '-HIVJnL-aweRQf395IVy': {
-    username: 'somavazze'
+    displayName: 'somavazze'
   },
   '-HIVJnL-aweRQf395IVz': {
-    username: 'TeszElek',
-    firstName: 'Elek',
-    lastName: 'Teszt'
+    displayName: 'TeszElek'
   },
   '-HIVJnL-aweRQf395IWb': {
-    username: 'Totti'
+    displayName: 'Totti'
   },
   '-HIVJnL-aweRQf395IWc': {
-    username: 'Zuzu',
-    firstName: 'Lilla',
-    lastName: 'Horváth'
+    displayName: 'Zuzu'
   }
 }
 
