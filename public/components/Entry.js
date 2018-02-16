@@ -3,6 +3,10 @@ import styled from 'styled-components'
 
 import { Link } from 'react-router-dom'
 
+import Title from 'grommet/components/Title'
+import Article from 'grommet/components/Article'
+import Section from 'grommet/components/Section'
+
 import renderMessage from '../../messageBody/renderer/renderMessage'
 
 import Time from './Time'
@@ -10,7 +14,7 @@ import Time from './Time'
 import type { BlockNode } from '../../messageBody/types'
 import type { EntryFull } from '../types'
 
-const StyledEntry = styled.article`
+const StyledEntry = styled(Article)`
   margin-bottom: 25px;
   background-color: ${props => props.selected ? '#fafafa' : 'transparent'};
 
@@ -22,7 +26,6 @@ const StyledEntry = styled.article`
     margin-top: 20px;
   }
 
-  .byline {}
   .username {
     font-weight: bold;
     margin: 0;
@@ -43,8 +46,6 @@ const StyledEntry = styled.article`
     }
   }
   .message {
-    font-size: 15px;
-
     & > :last-child {
       margin-bottom: 0;
     }
@@ -62,17 +63,17 @@ export default function Entry ({ entry, selected }: Props): React.Element<'artic
   const permalink = `/entry/${id}`
 
   return (
-    <StyledEntry selected={selected} itemScope itemType='http://schema.org/DiscussionForumPosting'>
-      <div className='byline'>
-        <p className='username' itemProp='author' itemScope itemType='http://schema.org/Person'>
-          <span itemProp='name'>{author.displayName}</span>
-          <span className='debug' itemProp='otherName'>{id}</span>
-        </p>
-        <Link to={permalink} className='publishdate'>
-          <Time publishTime={publishTime} />
-        </Link>
-      </div>
-      <div className='message' itemProp='articleBody'>{renderMessage(message)}</div>
+    <StyledEntry itemScope itemType='http://schema.org/DiscussionForumPosting'>
+      <Title className='username' itemProp='author' itemScope itemType='http://schema.org/Person'>
+        <span itemProp='name'>{author.displayName}</span>
+        <span className='debug' itemProp='otherName'>{id}</span>
+      </Title>
+      <Link to={permalink} className='publishdate'>
+        <Time publishTime={publishTime} />
+      </Link>
+      <Section className='message' itemProp='articleBody'>
+        {renderMessage(message)}
+      </Section>
     </StyledEntry>
   )
 }

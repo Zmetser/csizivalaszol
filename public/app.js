@@ -16,9 +16,11 @@ if (!root) {
 ReactDOM.render(<App />, root)
 
 injectGlobal`
-  body {
+  body, .brand-font, .grommet {
     font-family: 'Open Sans', sans-serif;
-    font-size: 16px;
-    line-height: 24px;
+  }
+
+  .grommet p:not(.grommetux-paragraph) {
+    margin-top: 0;
   }
 `

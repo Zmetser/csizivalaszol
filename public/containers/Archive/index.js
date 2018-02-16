@@ -3,6 +3,9 @@
  */
 import * as React from 'react'
 
+import Section from 'grommet/components/Section'
+import Heading from 'grommet/components/Heading'
+
 import Stream from '../../components/Stream'
 import Entries from '../../api/entries'
 
@@ -20,9 +23,14 @@ function loadMore (entryId: EntryId): Promise<Array<ResolvedEntry>> {
 }
 
 export default function Archive () {
-  return <Stream
-    loadEntries={loadEntries}
-    loadMore={loadMore}
-    nextButton='Nem elég Csiziből'
-  />
+  return (
+    <Section appCentered>
+      <Heading align='center'>Csizi válaszol archívum</Heading>
+      <Stream
+        loadEntries={loadEntries}
+        loadMore={loadMore}
+        nextButton='Nem elég Csiziből'
+      />
+    </Section>
+  )
 }
