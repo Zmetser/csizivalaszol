@@ -1,8 +1,12 @@
 /**
  * @flow
  */
-import firebase from 'firebase/app'
-import 'firebase/database'
+import * as firebase from 'firebase'
+import app from 'firebase/app'
+import auth from 'firebase/auth'
+import database from 'firebase/database'
+
+import User from './models/User'
 
 const config = {
   apiKey: 'AIzaSyDZ8rFCMnvRSRjbPVJ0YMY_rLM_FmSBLdM',

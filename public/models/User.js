@@ -24,5 +24,6 @@ export default class User {
     this.username = user.username
     this.firstName = user.firstName || null
     this.lastName = user.lastName || null
+  constructor (user: $npm$firebase$auth$User) {
   }
 }

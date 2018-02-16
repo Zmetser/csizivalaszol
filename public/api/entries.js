@@ -24,7 +24,7 @@ function valueNotFoundError (URL) {
 type Path = 'entries' | 'entriesArchive'
 
 export default class Entries {
-  ref: Query
+  ref: $npm$firebase$database$Query
 
   constructor (path: Path) {
     this.ref = firebaseApp.database().ref(path).orderByKey()
@@ -77,7 +77,7 @@ function getUser (id: UserId): Promise<User> {
     }, reject))
 }
 
-function resolveEntry (dataSnapshot: DataSnapshot<EntrySnapshotValue>): Promise<ResolvedEntry> {
+function resolveEntry (dataSnapshot: $npm$firebase$database$DataSnapshot): Promise<ResolvedEntry> {
   const id = dataSnapshot.key
 
   if (!id) {
@@ -93,11 +93,12 @@ function resolveEntry (dataSnapshot: DataSnapshot<EntrySnapshotValue>): Promise<
   return entryWithAuthor
 }
 
-function resolveEntries (snapshot: DataSnapshot<Array<EntrySnapshotValue>>): Promise<Array<ResolvedEntry>> {
+function resolveEntries (snapshot: $npm$firebase$database$DataSnapshot): Promise<Array<ResolvedEntry>> {
   const entries = []
 
   snapshot.forEach((childSnapshot) => {
     entries.push(resolveEntry(childSnapshot))
+    return false
   })
 
   return Promise.all(entries)
