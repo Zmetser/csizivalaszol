@@ -26,24 +26,33 @@ const StyledEntry = styled.article`
   .username {
     font-weight: bold;
     margin: 0;
+    font-size: 1.5rem;
+    line-height: 1;
   }
   .debug {
     color: #aaa;
     font-size: .8rem;
     font-family: monospace;
     font-weight: normal;
+    display: none;
   }
   .publishdate {
     color: #aaa;
     font-size: .8rem;
     text-decoration: none;
     transition: color .25s ease-in-out;
+    line-height: 1;
     :hover {
       color: #333;
     }
   }
   .message {
-    font-size: 15px;
+    font-size: ${props => props.selected ? '1rem' : '.9rem'};
+    font-family: 'Raleway', sans-serif;
+
+    p {
+      margin: 1.5rem 0;
+    }
 
     & > :last-child {
       margin-bottom: 0;

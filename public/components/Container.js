@@ -1,7 +1,7 @@
 import * as React from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
-export default styled.div`
+export const containerMixin = css`
   width: 100%;
   padding-right: 15px;
   padding-left: 15px;
@@ -23,4 +23,8 @@ export default styled.div`
   @media (min-width: 1200px) {
     max-width: 1140px;
   }
+`
+
+export default styled.div`
+  ${containerMixin}
 `

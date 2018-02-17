@@ -3,15 +3,12 @@
 import * as React from 'react'
 import ReactDOM from 'react-dom'
 
-import {
-  BrowserRouter,
-  Route,
-  Link
-} from 'react-router-dom'
+import { BrowserRouter, Route } from 'react-router-dom'
 
 import firebase from '../../firebaseApp'
 
 import Container from '../../components/Container'
+import Header from '../../components/Header'
 import Archive from '../Archive'
 import Permalink from '../Permalink'
 import Home from '../Home'
@@ -62,11 +59,14 @@ export default class App extends React.Component<{}, State> {
 
     return (
       <BrowserRouter>
-        <Container>
-          <RouteWithUser exact path='/' component={Home} user={user} />
-          <RouteWithUser exact path='/archive' component={Archive} user={user} />
-          <RouteWithUser exact path='/entry/:entryId' component={Permalink} user={user} />
-        </Container>
+        <React.Fragment>
+          <Header user={user} />
+          <Container>
+            <RouteWithUser exact path='/' component={Home} user={user} />
+            <RouteWithUser exact path='/archive' component={Archive} user={user} />
+            <RouteWithUser exact path='/entry/:entryId' component={Permalink} user={user} />
+          </Container>
+        </React.Fragment>
       </BrowserRouter>
     )
   }

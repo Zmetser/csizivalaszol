@@ -156,6 +156,34 @@
   version "0.2.6"
   resolved "https://registry.yarnpkg.com/@firebase/webchannel-wrapper/-/webchannel-wrapper-0.2.6.tgz#a4b81ca8cdeb1acbc7923289a4a514f61b59db86"
 
+"@fortawesome/fontawesome-common-types@^0.1.2":
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-common-types/-/fontawesome-common-types-0.1.2.tgz#d6aa075058f0c984d6e2ebcbc0052c1f7f9bea72"
+
+"@fortawesome/fontawesome-free-regular@^5.0.6":
+  version "5.0.6"
+  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-free-regular/-/fontawesome-free-regular-5.0.6.tgz#fafc624025a247c1a1bbb5080b9902a490cd79f5"
+  dependencies:
+    "@fortawesome/fontawesome-common-types" "^0.1.2"
+
+"@fortawesome/fontawesome-free-solid@^5.0.6":
+  version "5.0.6"
+  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-free-solid/-/fontawesome-free-solid-5.0.6.tgz#6bb5acdd081b03ab25b7684f7089b37ed3d20740"
+  dependencies:
+    "@fortawesome/fontawesome-common-types" "^0.1.2"
+
+"@fortawesome/fontawesome@^1.1.3":
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome/-/fontawesome-1.1.3.tgz#7a4844345cbc7fb238f5f1788af73bd302ee9b80"
+  dependencies:
+    "@fortawesome/fontawesome-common-types" "^0.1.2"
+
+"@fortawesome/react-fontawesome@^0.0.17":
+  version "0.0.17"
+  resolved "https://registry.yarnpkg.com/@fortawesome/react-fontawesome/-/react-fontawesome-0.0.17.tgz#69abd135523187044f533cadc5458f829d43961f"
+  dependencies:
+    humps "^2.0.1"
+
 "@google-cloud/common-grpc@^0.5.0":
   version "0.5.3"
   resolved "https://registry.yarnpkg.com/@google-cloud/common-grpc/-/common-grpc-0.5.3.tgz#cfc7ba598549b0284f3176a54338687a7cab60f7"
@@ -297,6 +325,12 @@
 "@protobufjs/utf8@^1.1.0":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@protobufjs/utf8/-/utf8-1.1.0.tgz#a777360b5b39a1a2e5106f8e858f2fd2d060c570"
+
+"@sinonjs/formatio@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@sinonjs/formatio/-/formatio-2.0.0.tgz#84db7e9eb5531df18a8c5e0bfb6e449e55e654b2"
+  dependencies:
+    samsam "1.3.0"
 
 "@types/google-cloud__storage@^1.1.1":
   version "1.1.7"
@@ -1642,15 +1676,29 @@ collection-visit@^1.0.0:
     map-visit "^1.0.0"
     object-visit "^1.0.0"
 
-color-convert@^1.9.0:
+color-convert@^1.9.0, color-convert@^1.9.1:
   version "1.9.1"
   resolved "https://registry.yarnpkg.com/color-convert/-/color-convert-1.9.1.tgz#c1261107aeb2f294ebffec9ed9ecad529a6097ed"
   dependencies:
     color-name "^1.1.1"
 
-color-name@^1.1.1:
+color-name@^1.0.0, color-name@^1.1.1:
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/color-name/-/color-name-1.1.3.tgz#a7d0558bd89c42f795dd42328f740831ca53bc25"
+
+color-string@^1.5.2:
+  version "1.5.2"
+  resolved "https://registry.yarnpkg.com/color-string/-/color-string-1.5.2.tgz#26e45814bc3c9a7cbd6751648a41434514a773a9"
+  dependencies:
+    color-name "^1.0.0"
+    simple-swizzle "^0.2.2"
+
+color@^2.0.0:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/color/-/color-2.0.1.tgz#e4ed78a3c4603d0891eba5430b04b86314f4c839"
+  dependencies:
+    color-convert "^1.9.1"
+    color-string "^1.5.2"
 
 colors@0.5.x:
   version "0.5.1"
@@ -2075,7 +2123,7 @@ detect-node@^2.0.3:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/detect-node/-/detect-node-2.0.3.tgz#a2033c09cc8e158d37748fbde7507832bd6ce127"
 
-diff@^3.2.0:
+diff@^3.1.0, diff@^3.2.0:
   version "3.4.0"
   resolved "https://registry.yarnpkg.com/diff/-/diff-3.4.0.tgz#b1d85507daf3964828de54b37d0d73ba67dda56c"
 
@@ -2721,6 +2769,10 @@ execa@^0.7.0:
     p-finally "^1.0.0"
     signal-exit "^3.0.0"
     strip-eof "^1.0.0"
+
+exenv@^1.2.2:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/exenv/-/exenv-1.2.2.tgz#2ae78e85d9894158670b03d47bec1f03bd91bb9d"
 
 exit-hook@^1.0.0:
   version "1.1.1"
@@ -3552,6 +3604,12 @@ hoek@4.x.x:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/hoek/-/hoek-4.2.0.tgz#72d9d0754f7fe25ca2d01ad8f8f9a9449a89526d"
 
+hoist-non-react-methods@^1.0.2:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/hoist-non-react-methods/-/hoist-non-react-methods-1.1.0.tgz#f1e1a639da27dd5ba0435d541ed5ebc903bbf9a6"
+  dependencies:
+    sinon "^4.2.0"
+
 hoist-non-react-statics@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-1.2.0.tgz#aa448cf0986d55cc40773b17174b7dd066cb7cfb"
@@ -3676,6 +3734,10 @@ http-signature@~1.2.0:
 https-browserify@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/https-browserify/-/https-browserify-1.0.0.tgz#ec06c10e0a34c0f2faf199f7fd7fc78fffd03c73"
+
+humps@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/humps/-/humps-2.0.1.tgz#dd02ea6081bd0568dc5d073184463957ba9ef9aa"
 
 iconv-lite@0.4.19, iconv-lite@^0.4.17, iconv-lite@~0.4.13:
   version "0.4.19"
@@ -3809,6 +3871,10 @@ is-accessor-descriptor@^1.0.0:
 is-arrayish@^0.2.1:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/is-arrayish/-/is-arrayish-0.2.1.tgz#77c99840527aa8ecb1a8ba697b80645a7a926a9d"
+
+is-arrayish@^0.3.1:
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/is-arrayish/-/is-arrayish-0.3.1.tgz#c2dfc386abaa0c3e33c48db3fe87059e69065efd"
 
 is-binary-path@^1.0.0:
   version "1.0.1"
@@ -4533,6 +4599,10 @@ jsx-ast-utils@^2.0.1:
   dependencies:
     array-includes "^3.0.3"
 
+just-extend@^1.1.27:
+  version "1.1.27"
+  resolved "https://registry.yarnpkg.com/just-extend/-/just-extend-1.1.27.tgz#ec6e79410ff914e472652abfa0e603c03d60e905"
+
 jwa@^1.1.4:
   version "1.1.5"
   resolved "https://registry.yarnpkg.com/jwa/-/jwa-1.1.5.tgz#a0552ce0220742cd52e153774a32905c30e756e5"
@@ -4667,6 +4737,10 @@ lodash.flattendeep@^4.4.0:
   version "4.4.0"
   resolved "https://registry.yarnpkg.com/lodash.flattendeep/-/lodash.flattendeep-4.4.0.tgz#fb030917f86a3134e5bc9bec0d69e0013ddfedb2"
 
+lodash.get@^4.4.2:
+  version "4.4.2"
+  resolved "https://registry.yarnpkg.com/lodash.get/-/lodash.get-4.4.2.tgz#2d177f652fa31e939b4438d5341499dfa3825e99"
+
 lodash.includes@^4.3.0:
   version "4.3.0"
   resolved "https://registry.yarnpkg.com/lodash.includes/-/lodash.includes-4.3.0.tgz#60bb98a87cb923c68ca1e51325483314849f553f"
@@ -4691,6 +4765,14 @@ lodash.isstring@^4.0.1:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/lodash.isstring/-/lodash.isstring-4.0.1.tgz#d527dfb5456eca7cc9bb95d5daeaf88ba54a5451"
 
+lodash.map@^4.6.0:
+  version "4.6.0"
+  resolved "https://registry.yarnpkg.com/lodash.map/-/lodash.map-4.6.0.tgz#771ec7839e3473d9c4cde28b19394c3562f4f6d3"
+
+lodash.mapvalues@^4.6.0:
+  version "4.6.0"
+  resolved "https://registry.yarnpkg.com/lodash.mapvalues/-/lodash.mapvalues-4.6.0.tgz#1bafa5005de9dd6f4f26668c30ca37230cc9689c"
+
 lodash.merge@^4.6.0:
   version "4.6.0"
   resolved "https://registry.yarnpkg.com/lodash.merge/-/lodash.merge-4.6.0.tgz#69884ba144ac33fe699737a6086deffadd0f89c5"
@@ -4699,9 +4781,17 @@ lodash.noop@^3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/lodash.noop/-/lodash.noop-3.0.1.tgz#38188f4d650a3a474258439b96ec45b32617133c"
 
+lodash.omit@^4.5.0:
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/lodash.omit/-/lodash.omit-4.5.0.tgz#6eb19ae5a1ee1dd9df0b969e66ce0b7fa30b5e60"
+
 lodash.once@^4.0.0:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/lodash.once/-/lodash.once-4.1.1.tgz#0dd3971213c7c56df880977d504c88fb471a97ac"
+
+lodash.pick@^4.4.0:
+  version "4.4.0"
+  resolved "https://registry.yarnpkg.com/lodash.pick/-/lodash.pick-4.4.0.tgz#52f05610fff9ded422611441ed1fc123a03001b3"
 
 lodash.pickby@^4.0.0:
   version "4.6.0"
@@ -4710,6 +4800,10 @@ lodash.pickby@^4.0.0:
 lodash.sortby@^4.7.0:
   version "4.7.0"
   resolved "https://registry.yarnpkg.com/lodash.sortby/-/lodash.sortby-4.7.0.tgz#edd14c824e2cc9c1e0b0a1b42bb5210516a42438"
+
+lodash.throttle@^4.1.1:
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/lodash.throttle/-/lodash.throttle-4.1.1.tgz#c23e91b710242ac70c37f1e1cda9274cc39bf2f4"
 
 lodash@^4.0.0, lodash@^4.13.1, lodash@^4.14.0, lodash@^4.15.0, lodash@^4.17.2, lodash@^4.17.4, lodash@^4.2.0, lodash@^4.3.0, lodash@^4.6.1, lodash@^4.9.0:
   version "4.17.4"
@@ -4722,6 +4816,10 @@ log-driver@^1.2.5:
 loglevel@^1.4.1:
   version "1.6.1"
   resolved "https://registry.yarnpkg.com/loglevel/-/loglevel-1.6.1.tgz#e0fc95133b6ef276cdc8887cdaf24aa6f156f8fa"
+
+lolex@^2.2.0, lolex@^2.3.2:
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/lolex/-/lolex-2.3.2.tgz#85f9450425103bf9e7a60668ea25dc43274ca807"
 
 long@^3.2.0, long@~3:
   version "3.2.0"
@@ -5028,6 +5126,16 @@ nearley@^2.7.10:
 negotiator@0.6.1:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/negotiator/-/negotiator-0.6.1.tgz#2b327184e8992101177b28563fb5e7102acd0ca9"
+
+nise@^1.2.0:
+  version "1.2.5"
+  resolved "https://registry.yarnpkg.com/nise/-/nise-1.2.5.tgz#a143371b65014b6807d3a6e6b4556063f3a53363"
+  dependencies:
+    "@sinonjs/formatio" "^2.0.0"
+    just-extend "^1.1.27"
+    lolex "^2.3.2"
+    path-to-regexp "^1.7.0"
+    text-encoding "^0.6.4"
 
 no-case@^2.2.0:
   version "2.3.2"
@@ -5621,7 +5729,7 @@ promise@^7.1.1:
   dependencies:
     asap "~2.0.3"
 
-prop-types@^15.5.4, prop-types@^15.6.0:
+prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.8, prop-types@^15.6.0:
   version "15.6.0"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.6.0.tgz#ceaf083022fc46b4a35f69e13ef75aed0d639856"
   dependencies:
@@ -5804,12 +5912,24 @@ react-dom@16.2.0:
     object-assign "^4.1.1"
     prop-types "^15.6.0"
 
+react-portal@^4.0.0-rc.0:
+  version "4.1.2"
+  resolved "https://registry.yarnpkg.com/react-portal/-/react-portal-4.1.2.tgz#7f28f3c8c2ed5c541907c0ed0f24e8996acf627f"
+  dependencies:
+    prop-types "^15.5.8"
+
 react-proxy@^1.1.7:
   version "1.1.8"
   resolved "https://registry.yarnpkg.com/react-proxy/-/react-proxy-1.1.8.tgz#9dbfd9d927528c3aa9f444e4558c37830ab8c26a"
   dependencies:
     lodash "^4.6.1"
     react-deep-force-update "^1.0.0"
+
+react-resize-detector@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/react-resize-detector/-/react-resize-detector-0.5.0.tgz#e1eaaba654c08008dc22dc70c75ab6d3f2e82624"
+  dependencies:
+    prop-types "^15.5.8"
 
 react-router-dom@^4.2.2:
   version "4.2.2"
@@ -5842,6 +5962,12 @@ react-test-renderer@16.2.0:
     object-assign "^4.1.1"
     prop-types "^15.6.0"
 
+react-textarea-autosize@^5.0.7:
+  version "5.2.1"
+  resolved "https://registry.yarnpkg.com/react-textarea-autosize/-/react-textarea-autosize-5.2.1.tgz#2b78f9067180f41b08ac59f78f1581abadd61e54"
+  dependencies:
+    prop-types "^15.6.0"
+
 react-transform-catch-errors@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/react-transform-catch-errors/-/react-transform-catch-errors-1.0.2.tgz#1b4d4a76e97271896fc16fe3086c793ec88a9eeb"
@@ -5861,6 +5987,197 @@ react@16.2.0:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
     prop-types "^15.6.0"
+
+reactackle-app@^1.0.0-beta.6:
+  version "1.0.0-beta.6"
+  resolved "https://registry.yarnpkg.com/reactackle-app/-/reactackle-app-1.0.0-beta.6.tgz#ff36bfdfc5c948f2fceceddcd4a2a07438b83b16"
+  dependencies:
+    prop-types "^15.5.10"
+
+reactackle-autoposition@^1.0.0-beta.6:
+  version "1.0.0-beta.6"
+  resolved "https://registry.yarnpkg.com/reactackle-autoposition/-/reactackle-autoposition-1.0.0-beta.6.tgz#0de9cf635952c62843467fb8b8197704822d280b"
+  dependencies:
+    exenv "^1.2.2"
+    lodash.throttle "^4.1.1"
+    prop-types "^15.5.10"
+    react-portal "^4.0.0-rc.0"
+
+reactackle-button@^1.0.0-beta.6:
+  version "1.0.0-beta.6"
+  resolved "https://registry.yarnpkg.com/reactackle-button/-/reactackle-button-1.0.0-beta.6.tgz#f853b2be059eb9228be4dd93d1236923ceefeb95"
+  dependencies:
+    color "^2.0.0"
+    prop-types "^15.5.10"
+    reactackle-icons "^1.0.0-beta.6"
+
+reactackle-card@^1.0.0-beta.6:
+  version "1.0.0-beta.6"
+  resolved "https://registry.yarnpkg.com/reactackle-card/-/reactackle-card-1.0.0-beta.6.tgz#e34dd38cc860eaf376d7353e43f84539df447772"
+  dependencies:
+    prop-types "^15.5.10"
+
+reactackle-checkbox@^1.0.0-beta.6:
+  version "1.0.0-beta.6"
+  resolved "https://registry.yarnpkg.com/reactackle-checkbox/-/reactackle-checkbox-1.0.0-beta.6.tgz#f922f0414ac275abfcc03d85e61bbe828a73c6b9"
+  dependencies:
+    prop-types "^15.5.10"
+    reactackle-icons "^1.0.0-beta.6"
+    reactackle-tooltip "^1.0.0-beta.6"
+    reactackle-tooltip-icon "^1.0.0-beta.6"
+
+reactackle-core@^1.0.0-beta.6:
+  version "1.0.0-beta.6"
+  resolved "https://registry.yarnpkg.com/reactackle-core/-/reactackle-core-1.0.0-beta.6.tgz#093967151a8593149da33f94d5f015897cd74258"
+  dependencies:
+    color "^2.0.0"
+    hoist-non-react-methods "^1.0.2"
+    lodash.map "^4.6.0"
+    lodash.mapvalues "^4.6.0"
+    lodash.merge "^4.6.0"
+    lodash.omit "^4.5.0"
+    lodash.pick "^4.4.0"
+    prop-types "^15.5.10"
+
+reactackle-dialog@^1.0.0-beta.6:
+  version "1.0.0-beta.6"
+  resolved "https://registry.yarnpkg.com/reactackle-dialog/-/reactackle-dialog-1.0.0-beta.6.tgz#11ae02d66591e8e526ff1be7291175a56acb5cff"
+  dependencies:
+    prop-types "^15.5.10"
+    react-portal "^4.0.0-rc.0"
+    reactackle-button "^1.0.0-beta.6"
+    reactackle-icons "^1.0.0-beta.6"
+
+reactackle-form@^1.0.0-beta.6:
+  version "1.0.0-beta.6"
+  resolved "https://registry.yarnpkg.com/reactackle-form/-/reactackle-form-1.0.0-beta.6.tgz#6c622c8a1f775e4f10b928c9e2b4a8d5ce38497e"
+  dependencies:
+    color "^2.0.0"
+    prop-types "^15.5.10"
+
+reactackle-grid@^1.0.0-beta.6:
+  version "1.0.0-beta.6"
+  resolved "https://registry.yarnpkg.com/reactackle-grid/-/reactackle-grid-1.0.0-beta.6.tgz#62c723d5eeb61f39736e21bc246f2c662b2be449"
+  dependencies:
+    prop-types "^15.5.10"
+
+reactackle-header@^1.0.0-beta.6:
+  version "1.0.0-beta.6"
+  resolved "https://registry.yarnpkg.com/reactackle-header/-/reactackle-header-1.0.0-beta.6.tgz#c99c091feba6bc0c67ca630504ef8e193c97135e"
+  dependencies:
+    prop-types "^15.5.10"
+    react-resize-detector "^0.5.0"
+
+reactackle-icons@^1.0.0-beta.6:
+  version "1.0.0-beta.6"
+  resolved "https://registry.yarnpkg.com/reactackle-icons/-/reactackle-icons-1.0.0-beta.6.tgz#c774003f4fdb607fa68071f554677f5ad40619db"
+  dependencies:
+    prop-types "^15.5.10"
+
+reactackle-input-autocomplete@^1.0.0-beta.6:
+  version "1.0.0-beta.6"
+  resolved "https://registry.yarnpkg.com/reactackle-input-autocomplete/-/reactackle-input-autocomplete-1.0.0-beta.6.tgz#3836931bf87c989213911632fc7c3a85f20078ce"
+  dependencies:
+    lodash.pick "^4.4.0"
+    prop-types "^15.5.10"
+    reactackle-autoposition "^1.0.0-beta.6"
+    reactackle-text-field "^1.0.0-beta.6"
+
+reactackle-radio-group@^1.0.0-beta.6:
+  version "1.0.0-beta.6"
+  resolved "https://registry.yarnpkg.com/reactackle-radio-group/-/reactackle-radio-group-1.0.0-beta.6.tgz#9e0617af525729ce67a515e9737fbbd88a146f70"
+  dependencies:
+    prop-types "^15.5.10"
+
+reactackle-selectbox@^1.0.0-beta.6:
+  version "1.0.0-beta.6"
+  resolved "https://registry.yarnpkg.com/reactackle-selectbox/-/reactackle-selectbox-1.0.0-beta.6.tgz#91d9d5cd578ca03d3daf879704f40f4db9d4b128"
+  dependencies:
+    prop-types "^15.5.10"
+    reactackle-autoposition "^1.0.0-beta.6"
+    reactackle-icons "^1.0.0-beta.6"
+    reactackle-tooltip-icon "^1.0.0-beta.6"
+
+reactackle-sidebar@^1.0.0-beta.6:
+  version "1.0.0-beta.6"
+  resolved "https://registry.yarnpkg.com/reactackle-sidebar/-/reactackle-sidebar-1.0.0-beta.6.tgz#629abb5004059cb124548f802e47cbfcf0aec978"
+  dependencies:
+    color "^2.0.0"
+    prop-types "^15.5.10"
+    reactackle-icons "^1.0.0-beta.6"
+
+reactackle-tabs@^1.0.0-beta.6:
+  version "1.0.0-beta.6"
+  resolved "https://registry.yarnpkg.com/reactackle-tabs/-/reactackle-tabs-1.0.0-beta.6.tgz#d2843597551d1f016b1f6fd675452b25b4aa0e48"
+  dependencies:
+    lodash.omit "^4.5.0"
+    prop-types "^15.5.10"
+    reactackle-icons "^1.0.0-beta.6"
+
+reactackle-text-field@^1.0.0-beta.6:
+  version "1.0.0-beta.6"
+  resolved "https://registry.yarnpkg.com/reactackle-text-field/-/reactackle-text-field-1.0.0-beta.6.tgz#54157bb17fcf35bc91b02eccb6e3678fa884df9e"
+  dependencies:
+    color "^2.0.0"
+    prop-types "^15.5.10"
+    react-textarea-autosize "^5.0.7"
+    reactackle-icons "^1.0.0-beta.6"
+    reactackle-tooltip-icon "^1.0.0-beta.6"
+
+reactackle-text@^1.0.0-beta.6:
+  version "1.0.0-beta.6"
+  resolved "https://registry.yarnpkg.com/reactackle-text/-/reactackle-text-1.0.0-beta.6.tgz#c40061f65b17b34cd6020176f3cd3d60d09707f7"
+  dependencies:
+    prop-types "^15.5.10"
+    reactackle-tooltip "^1.0.0-beta.6"
+
+reactackle-toggle-button@^1.0.0-beta.6:
+  version "1.0.0-beta.6"
+  resolved "https://registry.yarnpkg.com/reactackle-toggle-button/-/reactackle-toggle-button-1.0.0-beta.6.tgz#533c7f7759a0d1b58e223457973e88eea85e3c9a"
+  dependencies:
+    color "^2.0.0"
+    prop-types "^15.5.10"
+    reactackle-tooltip-icon "^1.0.0-beta.6"
+
+reactackle-tooltip-icon@^1.0.0-beta.6:
+  version "1.0.0-beta.6"
+  resolved "https://registry.yarnpkg.com/reactackle-tooltip-icon/-/reactackle-tooltip-icon-1.0.0-beta.6.tgz#12ae3aab61add5b0ad38e035c6a41a9f00a12cad"
+  dependencies:
+    prop-types "^15.5.10"
+    reactackle-tooltip "^1.0.0-beta.6"
+
+reactackle-tooltip@^1.0.0-beta.6:
+  version "1.0.0-beta.6"
+  resolved "https://registry.yarnpkg.com/reactackle-tooltip/-/reactackle-tooltip-1.0.0-beta.6.tgz#12500383b7e5e716a41fa72b2b6d6a9e85290d95"
+  dependencies:
+    prop-types "^15.5.10"
+    react-portal "^4.0.0-rc.0"
+
+reactackle@^1.0.0-beta.6:
+  version "1.0.0-beta.6"
+  resolved "https://registry.yarnpkg.com/reactackle/-/reactackle-1.0.0-beta.6.tgz#99460016adb264953eaf66f44c48d4d6f5fe29d3"
+  dependencies:
+    reactackle-app "^1.0.0-beta.6"
+    reactackle-autoposition "^1.0.0-beta.6"
+    reactackle-button "^1.0.0-beta.6"
+    reactackle-card "^1.0.0-beta.6"
+    reactackle-checkbox "^1.0.0-beta.6"
+    reactackle-core "^1.0.0-beta.6"
+    reactackle-dialog "^1.0.0-beta.6"
+    reactackle-form "^1.0.0-beta.6"
+    reactackle-grid "^1.0.0-beta.6"
+    reactackle-header "^1.0.0-beta.6"
+    reactackle-icons "^1.0.0-beta.6"
+    reactackle-input-autocomplete "^1.0.0-beta.6"
+    reactackle-radio-group "^1.0.0-beta.6"
+    reactackle-selectbox "^1.0.0-beta.6"
+    reactackle-sidebar "^1.0.0-beta.6"
+    reactackle-tabs "^1.0.0-beta.6"
+    reactackle-text "^1.0.0-beta.6"
+    reactackle-text-field "^1.0.0-beta.6"
+    reactackle-toggle-button "^1.0.0-beta.6"
+    reactackle-tooltip "^1.0.0-beta.6"
+    reactackle-tooltip-icon "^1.0.0-beta.6"
 
 read-pkg-up@^1.0.1:
   version "1.0.1"
@@ -6207,6 +6524,10 @@ safe-buffer@5.1.1, safe-buffer@^5.0.1, safe-buffer@^5.1.0, safe-buffer@^5.1.1, s
   version "5.1.1"
   resolved "https://registry.yarnpkg.com/safe-buffer/-/safe-buffer-5.1.1.tgz#893312af69b2123def71f57889001671eeb2c853"
 
+samsam@1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/samsam/-/samsam-1.3.0.tgz#8d1d9350e25622da30de3e44ba692b5221ab7c50"
+
 sane@^2.0.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/sane/-/sane-2.2.0.tgz#d6d2e2fcab00e3d283c93b912b7c3a20846f1d56"
@@ -6354,6 +6675,24 @@ shellwords@^0.1.1:
 signal-exit@^3.0.0, signal-exit@^3.0.2:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-3.0.2.tgz#b5fdc08f1287ea1178628e415e25132b73646c6d"
+
+simple-swizzle@^0.2.2:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/simple-swizzle/-/simple-swizzle-0.2.2.tgz#a4da6b635ffcccca33f70d17cb92592de95e557a"
+  dependencies:
+    is-arrayish "^0.3.1"
+
+sinon@^4.2.0:
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/sinon/-/sinon-4.3.0.tgz#cec9b27d5f4e2c63c1a79c9dc1c05d34bb088234"
+  dependencies:
+    "@sinonjs/formatio" "^2.0.0"
+    diff "^3.1.0"
+    lodash.get "^4.4.2"
+    lolex "^2.2.0"
+    nise "^1.2.0"
+    supports-color "^5.1.0"
+    type-detect "^4.0.5"
 
 slash@^1.0.0:
   version "1.0.0"
@@ -6745,6 +7084,20 @@ stubs@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/stubs/-/stubs-3.0.0.tgz#e8d2ba1fa9c90570303c030b6900f7d5f89abe5b"
 
+styled-components@3.1.4:
+  version "3.1.4"
+  resolved "https://registry.yarnpkg.com/styled-components/-/styled-components-3.1.4.tgz#1bdc1409c9bacafee3510c573d23b73039b0d875"
+  dependencies:
+    buffer "^5.0.3"
+    css-to-react-native "^2.0.3"
+    fbjs "^0.8.9"
+    hoist-non-react-statics "^1.2.0"
+    is-plain-object "^2.0.1"
+    prop-types "^15.5.4"
+    stylis "^3.4.0"
+    stylis-rule-sheet "^0.0.7"
+    supports-color "^3.2.3"
+
 styled-components@^3.1.5:
   version "3.1.5"
   resolved "https://registry.yarnpkg.com/styled-components/-/styled-components-3.1.5.tgz#7aaf0a97f8c5cd49791e924887f9d8f428fb010c"
@@ -6758,6 +7111,17 @@ styled-components@^3.1.5:
     stylis "^3.4.0"
     stylis-rule-sheet "^0.0.7"
     supports-color "^3.2.3"
+
+styled-flex-component@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/styled-flex-component/-/styled-flex-component-2.2.0.tgz#d751bbb73743d03876719974efeb12346ebf8923"
+  dependencies:
+    styled-components "3.1.4"
+    styled-is "1.1.2"
+
+styled-is@1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/styled-is/-/styled-is-1.1.2.tgz#f23a43249ba52ac9136c166aac1da30a5711593e"
 
 stylis-rule-sheet@^0.0.7:
   version "0.0.7"
@@ -6849,6 +7213,10 @@ test-exclude@^4.1.1:
     object-assign "^4.1.0"
     read-pkg-up "^1.0.1"
     require-main-filename "^1.0.1"
+
+text-encoding@^0.6.4:
+  version "0.6.4"
+  resolved "https://registry.yarnpkg.com/text-encoding/-/text-encoding-0.6.4.tgz#e399a982257a276dae428bb92845cb71bdc26d19"
 
 text-table@~0.2.0:
   version "0.2.0"
@@ -6965,6 +7333,10 @@ type-check@~0.3.2:
   resolved "https://registry.yarnpkg.com/type-check/-/type-check-0.3.2.tgz#5884cab512cf1d355e3fb784f30804b2b520db72"
   dependencies:
     prelude-ls "~1.1.2"
+
+type-detect@^4.0.5:
+  version "4.0.8"
+  resolved "https://registry.yarnpkg.com/type-detect/-/type-detect-4.0.8.tgz#7646fb5f18871cfbb7749e69bd39a6388eb7450c"
 
 type-is@~1.6.15:
   version "1.6.15"
