@@ -10,7 +10,7 @@ const theme = {
             backgroundColor: 'transparent',
             fontColor: '#212121'
           },
-          active: {
+          focus: {
             backgroundColor: 'transparent',
             fontColor: '#212121'
           }
