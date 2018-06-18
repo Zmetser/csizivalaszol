@@ -5,15 +5,16 @@ import ReactDOM from 'react-dom'
 
 import { BrowserRouter, Route } from 'react-router-dom'
 
-import firebase from '../../firebaseApp'
+import firebase from './firebaseApp'
 
-import Container from '../../components/Container'
-import Header from '../../components/Header'
-import Archive from '../Archive'
-import Permalink from '../Permalink'
-import Home from '../Home'
+import User from './models/User'
 
-import User from '../../models/User'
+import Archive from './containers/Archive'
+import Permalink from './containers/Permalink'
+import Home from './containers/Home'
+
+import Container from './components/Container'
+import Header from './components/Header'
 
 function RouteWithUser ({ component: Component, user, ...rest }) {
   return (

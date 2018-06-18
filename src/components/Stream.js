@@ -1,10 +1,8 @@
 /**
  * @flow
  */
-import { last } from 'lodash'
+import { last } from 'lodash/last'
 import * as React from 'react'
-
-import autobind from 'autobind-decorator'
 
 import Entry from '../components/Entry'
 
@@ -57,8 +55,7 @@ export default class Stream extends React.Component<Props, State> {
       .then(entries => this.setState({ entries }))
   }
 
-  @autobind
-  onLoadMoreClick () {
+  onLoadMoreClick = () => {
     const { id } = last(this.state.entries)
 
     if (this.props.loadMore) {
@@ -67,8 +64,7 @@ export default class Stream extends React.Component<Props, State> {
     }
   }
 
-  @autobind
-  onLoadPrevClick () {
+  onLoadPrevClick = () => {
     const { id } = this.state.entries[0]
 
     if (this.props.loadPrev) {

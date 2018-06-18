@@ -15,7 +15,6 @@ import { Button } from 'reactackle'
 import { containerMixin } from './Container'
 
 import User from '../models/User'
-import autobind from 'autobind-decorator'
 
 const Header = styled.header`
   margin-bottom: 2rem;
@@ -95,8 +94,7 @@ export default class HeaderComponent extends React.Component<Props, State> {
     menuOpen: false
   }
 
-  @autobind
-  toggleMenu () {
+  toggleMenu = () => {
     this.setState(prevState => ({ ...prevState, menuOpen: !prevState.menuOpen }))
   }
 

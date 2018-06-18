@@ -1,7 +1,7 @@
 /**
  * @flow
  */
-import type { BlockNode } from '../../messageBody/types'
+import type { BlockNode } from '../messageBody/types'
 import type { PublishTime } from '../types'
 import type { EntryId } from './EntryId'
 import { toEntryId } from './EntryId'

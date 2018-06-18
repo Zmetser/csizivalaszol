@@ -8,13 +8,9 @@ import { Theme } from 'reactackle'
 import { injectGlobal, ThemeProvider } from 'styled-components'
 import reactackleThemeMixin from './theme'
 
-import App from './containers/App'
+import App from './App'
 
-const root = document.getElementById('app')
-
-if (!root) {
-  throw new Error('Application root element can not be found!')
-}
+const root = document.getElementById('root')
 
 const customTheme = {}
 

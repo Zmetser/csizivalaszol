@@ -3,11 +3,11 @@ import styled from 'styled-components'
 
 import { Link } from 'react-router-dom'
 
-import renderMessage from '../../messageBody/renderer/renderMessage'
+import renderMessage from '../messageBody/renderer/renderMessage'
 
 import Time from './Time'
 
-import type { BlockNode } from '../../messageBody/types'
+import type { BlockNode } from '../messageBody/types'
 import type { EntryFull } from '../types'
 
 const StyledEntry = styled.article`

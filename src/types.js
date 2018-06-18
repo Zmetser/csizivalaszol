@@ -1,6 +1,6 @@
 import type {
   BlockNode
-} from '../messageBody/types'
+} from './messageBody/types'
 
 export type EntrySnapshotValue = {
   authorId: string,

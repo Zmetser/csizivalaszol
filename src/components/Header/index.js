@@ -1,7 +1,6 @@
 // @flow
 
 import * as React from 'react'
-import autobind from 'autobind-decorator'
 import { Link } from 'react-router-dom'
 
 import styled from 'styled-components'
@@ -57,18 +56,15 @@ export default class HeaderComponent extends React.Component<Props, State> {
     modalOpen: false
   }
 
-  @autobind
-  toggleMenu () {
+  toggleMenu = () => {
     this.setState(prevState => ({ ...prevState, menuOpen: !prevState.menuOpen }))
   }
 
-  @autobind
-  openLoginModal () {
+  openLoginModal = () => {
     this.setState({ modalOpen: true })
   }
 
-  @autobind
-  closeLoginModal () {
+  closeLoginModal = () => {
     this.setState({ modalOpen: false })
   }
 

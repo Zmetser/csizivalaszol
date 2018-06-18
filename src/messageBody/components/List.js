@@ -24,7 +24,6 @@ export function OrderedList ({ node }: { node: ListNode<'Number'> }): React.Elem
 }
 
 export default function List ({ node }: { node: ListTypes }): React.Element<typeof UnorderedList> | React.Element<typeof OrderedList> {
-  console.log(node)
   switch (node.listType) {
     case 'Number': return <OrderedList node={node} />
     case 'Bullet': return <UnorderedList node={node} />
