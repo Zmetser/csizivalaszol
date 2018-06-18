@@ -4,7 +4,7 @@
 
 import firebaseApp from '../firebaseApp'
 
-import { flatMap } from 'lodash/flatMap'
+import flatMap from 'lodash/flatMap'
 
 import Entry from '../models/Entry'
 import User from '../models/User'
