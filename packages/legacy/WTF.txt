@@ -1,0 +1,28 @@
+What You Have To Do!
+
+081222
+# Make some error handling.
+
+081213
+# Make sure everything works with the ./configs/config.php config file.
+# Make sure all templates works with Smarty
+
+
+## CHANGELOG ##
+090102
+ - Feature: Users online
+ - Feature: Ip logging.
+ - Feature: ADODB started, but just for the new functions only in the ./functions.php
+
+090101 - GLOBAL SITE
+ - Bugfix: Logout
+ - Feature: Password reminder (Generate a new massword, and email it)
+
+081222
+ - Bugfix: Users can't modify their messages.
+ - Bugfix: When a user modified one of it's message a "modified string" added at the bottom of the message. And when he/she modified again another string added. And so on...
+
+081213 T
+ - Added some smarty
+ - Created templates, templates_c and configs DIR
+    - Uses the sites smarty lib.

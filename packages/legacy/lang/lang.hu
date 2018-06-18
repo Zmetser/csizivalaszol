@@ -1,0 +1,16 @@
+<?PHP
+$cfg['lang']['cim'] = 'K.V.S.C. Csizi válaszol topik (teszt verzió)';
+$cfg['lang']['info'] = '';
+$cfg['lang']['hiba'] = '<strong>HIBA</strong>';
+$cfg['lang']['nevMezoHiba'] = 'A név mezõ nincs kitöltve.';
+$cfg['lang']['uzenetMezoHiba'] = 'Az üzenet mezõ nincs kitöltve.';
+$cfg['lang']['emailMezoHiba'] = 'Nem adtál meg e-mailcímet.';
+$cfg['lang']['emailValid'] = 'Az email cím nem tûnik valósnak.';
+$cfg['lang']['weblapMezoHiba'] = 'Nem adtál meg honlapcímet.';
+$cfg['lang']['weblapValid'] = 'A megadott url nem tûnik valosnak.';
+$cfg['lang']['thx'] = 'A hozzászólásod elküldve. Frissítés 3 másodperc múlva.';
+$cfg['lang']['loggin'] = 'Hozzászólás írásához ba kell jelentkezned!. Frissítés 3 másodperc múlva.';
+$cfg['lang']['gomb'] = 'Küldés!'; // gombfelirat
+$cfg['lang']['elozo'] = '[Elõzõ]';
+$cfg['lang']['kovetkezo'] = '[Következõ]';
+?>

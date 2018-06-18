@@ -1,0 +1,115 @@
+<?
+/*****************************
+# Elkészíti a Csizi válaszol statisztikáját
+# 1.1
+*****************************/
+
+	$keres = "SELECT * FROM csizi ORDER BY id DESC";
+	$query = mysql_query($keres);
+	
+
+	$csizi = 0;
+	while($sor = mysql_fetch_assoc($query))
+		{
+			extract($sor);
+			//nevek tömbbe rendezve
+			$nevekArray[$id] = $nev;
+			// Csizi üzeneteinek száma
+			if($nev === "Csizibaggio") { $csizi++; }
+		
+		}
+		
+		//echo print_r($napArray);
+		
+	
+
+  $nevekDarab = count($nevekArray);
+  $nevek = array_count_values($nevekArray);
+  $kerdesek = $nevekDarab-$csizi;
+  $csiziSzazalek = round(($csizi/$nevekDarab)*100, 2);
+
+
+  arsort($nevek);
+  reset($nevek);
+  $adatok = NULL;
+  for($i=0; (list($key,$val) = each($nevek)) && $i < 4; $i++)
+	{
+		$adatok .=  $key.".".$val."|";
+	}
+  $nevESszam = explode("|", $adatok);
+  $elso = explode(".", $nevESszam[1]);
+  $masodik = explode(".", $nevESszam[2]);
+  $harmadik = explode(".", $nevESszam[3]);
+  
+  $ermesSz1 = round(($elso[1]/$kerdesek)*100, 2);
+  $ermesSz2 = round(($masodik[1]/$kerdesek)*100, 2);
+  $ermesSz3 = round(($harmadik[1]/$kerdesek)*100, 2);
+  $ermesekSz = $ermesSz1+$ermesSz2+$ermesSz3;
+  
+  $stat = "Összesen <b>".$nevekDarab."</b> hozzászólás érkezett, <b>".count($nevek)."</b> hozzászólótól. <br/>";
+  $stat.= "<b>Csizi</b> összesen <b>".$csizi."</b> választ adott <b>".$kerdesek."</b> kérdésre ami az összes hozzászólás <b>".$csiziSzazalek."%</b>-a.<br/>";
+  $stat.= "Aranyérmes kérdezõ: <font color=\"red\"><b>".$elso[0]."</font> ".$elso[1]."</b> kérdéssel. A kérdések <b>".$ermesSz1."%</b>-át birtokolja.<br/>
+  Ezüstérmes kérdezõ: <b>".$masodik[0]." ".$masodik[1]."</b> kérdéssel. A kérdések <b>".$ermesSz2."%</b>-át birtokolja.<br/> 
+  Bronzérmes kérdezõ: <b>".$harmadik[0]."".$harmadik[1]."</b> kérdéssel. A kérdések <b>".$ermesSz3."%</b>-át birtokolja.<br/> ";
+  $stat.= "A három érmes összesen a kérdések <b>".$ermesekSz."%</b>-át birtokolja.<br/>";
+  $stat.= "<h3>Eddigi összes kérdezõ</h3>";
+  
+  arsort($nevek);
+  $stat.= '<table width="100%" border="1px" cellspacing="0" cellpadding="0">
+			<tr>
+			<td><b>Név</b></td>
+		    <td><b>Kérdések száma</b></td>
+		    <td><b>Százalékos arány</b></td>
+		    <td><b>Rang</b></td>
+			</tr>
+	';
+	while(list($key,$val) = each($nevek))
+		{
+			if($key === "Csizibaggio")
+				{
+					continue;
+				}
+			else
+				{
+					/*$query = mysql_query("SELECT id, nev, rang FROM user WHERE `nev` = '".$key."'");
+					echo "SELECT id, nev, rang FROM user WHERE `nev` = '".$key."'";
+					$f = mysql_fetch_row($query);*/
+					$szazalek = round(($val/$kerdesek)*100, 2);
+					$stat.= '<tr>
+								<td>'.$key.'</td>
+							    <td align="center">'.$val.'</td>
+							    <td align="center">'.$szazalek.'%</td>
+							    <td align="center"></td>
+							</tr>';
+				}
+		}
+		
+	mysql_free_result($query);
+		
+	//$alter = mysql_query("ALTER TABLE `csizi` ADD `nap` VARCHAR( 6 ) NOT NULL");
+	/*$keres = "SELECT id,datum FROM csizi";
+	$query = mysql_query($keres);
+		while($f = mysql_fetch_object($query))
+			{
+				$q = mysql_query("UPDATE `csizi` SET `nap` = '".date("ymd",$f->datum)."' WHERE `id` = ".$f->id." LIMIT 1");
+				$datum = $f->datum;
+			}
+	$count = mysql_query("SELECT nap, COUNT(nap) AS db FROM csizi GROUP BY nap ORDER BY db ASC");
+		while($f = mysql_fetch_object($count))
+			{
+				$napDarab[$f->nap] = $f->db;
+			}
+	$elso = mktime(0,0,0,7,31,2006);
+	$kivon = $datum - $elso;
+	$napiatlag = $nevekDarab / date("z", $kivon);
+	$stat.= "<br />Eddig átlag ~".round($napiatlag,2)." hozzászólás érkezett naponta. A topik ".date("z", $kivon)." napja üzemel.";
+	$hatralevoNapok = 365 - date("z");
+	$plusszhozzaszolas = $napiatlag * $hatralevoNapok;
+	$evvegere = $plusszhozzaszolas + $nevekDarab;
+	$stat.= "<br />Tehát ha az átlag nem változik akkor az év végére ".round($plusszhozzaszolas)." hozzászólással lesz több, mint a mostani. Így várhatóan az év végére ".round($evvegere)."db hozzászólással fogunk büszkélkedni.";
+	$szazalek2 = ($evvegere / $nevekDarab)*100;
+	$stat.= "<br /> Ez ".round($szazalek2,2)." %-os növekedést jelent."*/
+
+	
+
+?>

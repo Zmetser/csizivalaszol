@@ -1,0 +1,352 @@
+* {
+  margin:0;
+  padding:0;
+}
+body {
+  color:#000;
+  font-family:Verdana, Arial, sans-serif;
+  font-size:1em;
+}
+object,form {
+  margin:0;
+  padding:0;
+}
+img {
+  border:none;
+}
+a {
+  text-decoration:none;
+}
+#oldal {
+  width:800px;
+  margin:10px auto;
+}
+#fejlec {
+  background-image:url(header.png);
+  height:190px;
+}
+#tartalom {
+  width:800px;
+}
+#lablec {
+  position:relative;
+  top:50px;
+  clear:both;
+  background:url(footer-bg.png) 0 0 repeat-x;
+}
+#lablec-legal {
+  position:relative;
+  text-align:left;
+  width:800px;
+  clear:both;
+  background:url(legal-bg.png) 0 0 no-repeat;
+}
+#lablec-legal-container {
+  width:790px;
+  margin:0 auto;
+  padding:9px 10px 3px 100px;
+}
+.lablec a, .lablec  a:link, .lablec a:visited {
+  color:#666;
+  text-decoration:underline;
+}
+.lablec a:hover {
+  color:#000;
+  text-decoration:none;
+}
+
+font.h3 {
+  font-family: Verdana, Geneva, Arial, Helvetica, san-serif;
+  font-size: 10px;
+  font-style: normal;
+  line-height: normal;
+  font-weight: bold;
+  font-variant: normal;
+  color: black;
+  text-decoration: none
+}
+font.date {
+  font-family: Verdana, Geneva, Arial, Helvetica, san-serif;
+  font-size: 10px;
+  font-style: normal;
+  line-height: normal;
+  font-weight: bold;
+  font-variant: normal;
+  color: #ffffff;
+  text-decoration: none
+}
+/** Egy hozzászólás */
+
+table.hozzaszolas {
+  width:100%;
+  border:none;
+  margin-bottom:50px;
+}
+
+table.hozzaszolas thead tr {
+  background-color:#5B6D97;
+  text-align:left;
+  color:#fff;
+}
+
+table.hozzaszolas thead tr th {
+  padding:2px 0 2px 15px;
+}
+
+table.hozzaszolas thead tr th.name-bar {
+  width:25%;
+  font-size:1.4em;
+}
+
+table.hozzaszolas thead tr th.info-bar {
+  width:75%;
+  font-size:0.9em;
+  font-weight:normal;
+}
+
+table.hozzaszolas tbody tr {
+  background-color:#CAD0DF;
+  text-align:left;
+  text-align:center;
+  vertical-align:top;
+}
+
+table.hozzaszolas img.avatar {
+  border-top:5px solid #fff;
+  border-left:5px solid #fff;
+  border-right:5px solid #fff;
+  border-bottom:15px solid #fff;
+}
+
+table.hozzaszolas ul.info-area {
+  margin:10px 0 0 0;
+  padding:0;
+  font-size:0.8em;
+  list-style-type:none;
+}
+
+table.hozzaszolas p.rang {
+  font-size:1.2em;
+  font-weight:bolder;
+}
+
+/** Rangok */
+.ujonc { color:#999 }
+.kerdezo { color:#666 }
+.lkerdezo { color:#333 }
+.fanatikus { color:#000 }
+.fuggo { color:#063 }
+.nemtud { color:#C30 }
+.chief { color:#030; }
+.valaszolo { color:#F60; }
+.mr { color:#660; }
+.zsir { color:#F3C; }
+.mr2, .mr4, .mr5, .mr8 , .senki { color:#609; }
+
+table.hozzaszolas td.text-area {
+  text-align:left;
+  background:#CAD0DF url('page_white_text.png') top left no-repeat;
+  padding:0 10px 0 20px;
+}
+
+table.hozzaszolas td.text-area a {
+  color:#333;
+  font-weight:bolder;
+  text-decoration:none;
+}
+
+/* Hozzászólások megjelenítése */
+table.hozzaszolas td.text-area ul, 
+table.hozzaszolas td.text-area ol {
+  margin:10px 0;
+  padding:0px;
+  list-style-position: inside;
+}
+
+table.hozzaszolas td.text-area p {
+  margin:5px 0;
+}
+
+table.hozzaszolas tfoot tr{
+  background-color:#5B6D97;
+  text-align:right;
+  color:#fff;
+}
+
+table.hozzaszolas div.date {
+  float:left;
+}
+
+table.hozzaszolas div.admin {
+  float:right;
+}
+
+table.hozzaszolas div.modify-warning {
+  text-align:right;
+  font-size:0.7em;
+  border-top:2px solid #FFF;
+  vertical-align:baseline;
+  margin-top:30px;
+  padding-top:3px;
+}
+
+tfoot tr td a {
+  color:#fff;
+}
+
+/** Kérdezz Csizitől cím */
+h1.csizi-kerdes-cim1 {
+  display:block;
+  margin:20px 0 0px 0;
+  padding:10px 1px;
+  text-align:center;
+  font-size:2em;
+  color:#FFF;
+  background-color:#5B6D97;
+  width:100%;
+}
+
+span.csizi-kerdes-megjegyzes {
+  display:block;
+  margin-bottom:5px;
+  text-align:center;
+  padding:0 1px 3px 1px;
+  font-size:0.8em;
+  color:#FFF;
+  background-color:#5B6D97;
+  width:100%;
+}
+
+/** Kérdezz Csizitől Form */
+form.csizi-kerdes-form fieldset {
+  margin:0;
+  padding:0;
+  text-align:center;
+  border:none;
+}
+
+form.csizi-kerdes-form legend {
+  font-size:2em;
+  margin:0 0 15px 150px;
+}
+
+form.csizi-kerdes-form input.gomb{
+	width:100%;
+  height:50px;
+  display:block;
+	background-color:#5B6D97;
+	border:none;
+	font-weight:bolder;
+  font-size:1.2em;
+	color:#FFF;
+	margin:5px 0 0 0;
+	padding:2px 4px;
+}
+form.csizi-kerdes-form input.gomb:focus{
+	background-color:#6c7da6;
+}
+
+form.csizi-kerdes-form textarea {
+  width:100%;
+  height:300px;
+  font-size:10em;
+}
+
+/** Állapotsor */
+div.allapotsor  {
+  margin:0 0 20px 0;
+  font-size:0.9em;
+}
+
+p.welcome { 
+  display:block;
+  float:left; 
+}
+
+p.actions { 
+  display:block;
+  float:right; 
+}
+
+p.info-bar {
+  clear:both;
+}
+
+/** Oldal navigáció */
+div#navigacio {
+  padding:10px 0;
+  margin:20px auto 10px auto;
+  width:250px;
+}
+
+div.navigacio-elore {
+  width:30%;
+  float:left;
+}
+
+div.navigacio-form {
+  width:40%;
+  text-align:center;
+  float:left;
+}
+
+div.navigacio-form input {
+  text-align:center;
+  border:none;
+  width:100px;
+  height:26px;
+  font-size:1em;
+  vertical-align:bottom;
+  border-bottom:1px dotted #666;
+}
+
+div.navigacio-hatra {
+  width:30%;
+  float:right;
+  text-align:right;
+}
+
+a.csizi-kerlek-valaszolj {
+  display:block;
+  width:100%;
+  margin:15px 0;
+  padding:10px 0;
+  text-align:center;
+  text-transform:uppercase;
+  font-size:2em;
+  font-weight:bold;
+  color:#FFF;
+  cursor:pointer;
+}
+
+/** Online felhasználók */
+.online {
+  color:orange;
+  font-weight:bolder;
+  padding:7px;
+}
+
+.online p.cim {
+  background:transparent url('underline.gif') no-repeat bottom left;
+  color:#333;
+  font-size:0.9em;
+  font-weight:normal;
+  margin-bottom:10px;
+}
+
+.online p.nevek { margin-left:15px; }
+
+.tl {background:#eee url(rc/lt.gif) no-repeat top left; margin:-1px; }
+.tr {background: url(rc/rt.gif) no-repeat top right;}
+.br {background: url(rc/rb.gif) no-repeat bottom right;}
+.bl {background: url(rc/lb.gif) no-repeat bottom left;}
+	
+.tr, .tl, .bl, .br {zoom:1;position:relative;}
+
+.none { display:none; }
+.clear { clear:both; }
+
+.csizi-bar {
+  padding:5px;
+  background-color:#cc6303;
+}
