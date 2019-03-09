@@ -1,0 +1,13 @@
+dist: trusty
+
+language: node_js
+
+node_js:
+  - "lts/*"
+
+cache: npm
+
+script:
+  - npm run flow
+  - npm run build
+  - npm test
