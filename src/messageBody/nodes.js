@@ -1,6 +1,4 @@
 /**
- * @flow
- *
  * All the usable nodes
  */
 

@@ -1,5 +1,4 @@
 /**
- * @flow
  * Replace BBCode formatting to HTML equivalent.
  */
 module.exports = (text: string): string => {

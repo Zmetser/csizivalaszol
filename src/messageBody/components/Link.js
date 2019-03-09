@@ -1,6 +1,4 @@
 /**
- * @flow
- *
  * Create an anchor tag frm the Link structure
  */
 

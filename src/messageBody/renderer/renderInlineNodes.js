@@ -1,7 +1,3 @@
-/**
- * @flow
- */
-
 import * as React from 'react'
 import { UnknownNodeError } from '../errors'
 

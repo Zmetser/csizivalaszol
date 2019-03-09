@@ -1,7 +1,3 @@
-/**
- * @flow
- */
-
 import firebaseApp from '../firebaseApp'
 
 import Entry from '../models/Entry'

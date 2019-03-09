@@ -1,7 +1,3 @@
-/**
- * @flow
- */
-
 const nodeName = (node: Node): string => node ? node.nodeName.toLowerCase() : ''
 
 const isLineBreak = (node: Node): boolean => nodeName(node) === 'br'

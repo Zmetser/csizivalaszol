@@ -1,6 +1,4 @@
 /**
- * @flow
- *
  * Transform tiny_mce emoticon images to unicode emoticons
  */
 

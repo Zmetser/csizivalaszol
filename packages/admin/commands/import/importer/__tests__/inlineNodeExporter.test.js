@@ -1,7 +1,3 @@
-/**
- * @flow
- */
-
 const exporter = require('../normalize')
 
 describe.only('line breaks exporter', () => {

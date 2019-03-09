@@ -1,6 +1,3 @@
-/**
- * @flow
- */
 import type { UserId } from './UserId'
 import { toUserId } from './UserId'
 

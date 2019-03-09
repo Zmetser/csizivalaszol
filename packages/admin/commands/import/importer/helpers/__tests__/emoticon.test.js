@@ -1,7 +1,3 @@
-/**
- * @flow
- */
-
 const {
   isEmoticon,
   asciiEmoticonToUnicode,

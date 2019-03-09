@@ -1,7 +1,3 @@
-/**
- * @flow
- */
-
 const transform = require('../bbCode')
 
 describe('Transform bbcodes', () => {

@@ -1,6 +1,4 @@
 /**
- * @flow
- *
  * Create formatted text elements from TextNode structures.
  */
 

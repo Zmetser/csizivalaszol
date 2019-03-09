@@ -1,7 +1,3 @@
-/**
- * @flow
- */
-
 import type {
   InlineStyle,
   InlineNode,

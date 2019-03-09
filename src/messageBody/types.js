@@ -1,8 +1,3 @@
-/* eslint-disable no-undef */
-/**
- * @flow
- */
-
 export type InlineStyle =
   | "Italic"
   | "Bold"

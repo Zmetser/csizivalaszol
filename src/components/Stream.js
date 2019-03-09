@@ -1,6 +1,3 @@
-/**
- * @flow
- */
 import last from 'lodash/last'
 import * as React from 'react'
 
