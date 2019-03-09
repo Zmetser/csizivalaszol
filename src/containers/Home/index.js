@@ -4,7 +4,7 @@
 import * as React from 'react'
 
 import User from '../../models/User'
-import firebase, { facebookAuth, signOut } from '../../firebaseApp'
+import { facebookAuth, signOut } from '../../firebaseApp'
 import styled from 'styled-components'
 
 const FBLogin = styled.button``

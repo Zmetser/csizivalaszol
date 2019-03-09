@@ -2,9 +2,10 @@ import * as React from 'react'
 import styled from 'styled-components'
 
 import FontAwesomeIcon from '@fortawesome/react-fontawesome'
-import { faFacebook, faGoogle } from '@fortawesome/fontawesome-free-brands'
+import { faFacebook, faGoogle } from '@fortawesome/free-brands-svg-icons'
+import { faTimesCircle } from '@fortawesome/free-solid-svg-icons'
+
 import { Button } from 'reactackle'
-import { faTimesCircle } from '@fortawesome/fontawesome-free-solid'
 
 import { facebookAuth } from '../../firebaseApp'
 

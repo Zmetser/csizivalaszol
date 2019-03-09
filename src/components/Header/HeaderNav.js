@@ -6,7 +6,7 @@ import styled from 'styled-components'
 import { FlexItem } from 'styled-flex-component'
 
 import FontAwesomeIcon from '@fortawesome/react-fontawesome'
-import { faFolder, faFolderOpen } from '@fortawesome/fontawesome-free-regular'
+import { faFolder, faFolderOpen } from '@fortawesome/free-regular-svg-icons'
 
 import Container from '../Container'
 
@@ -15,8 +15,7 @@ const HeaderNav = styled.div`
   padding: .7rem;
 `
 
-const FlexNav = FlexItem.withComponent('nav')
-const Nav = FlexNav.extend`
+const Nav = styled(FlexItem)`
   order: 2;
   width: 100%;
 
@@ -55,7 +54,7 @@ export default () => (
   <HeaderNav>
     <Container>
       <FlexItem full alignCenter>
-        <Nav>
+        <Nav as="nav">
           <ul>
             <li>
               <NavItem to='/archive' activeClassName='active'>

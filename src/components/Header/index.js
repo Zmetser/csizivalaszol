@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 import FontAwesomeIcon from '@fortawesome/react-fontawesome'
-import { faUser, faBars } from '@fortawesome/fontawesome-free-solid'
+import { faUser, faBars } from '@fortawesome/free-solid-svg-icons'
 
 import Flex, { FlexItem } from 'styled-flex-component'
 import { Button } from 'reactackle'
@@ -26,7 +26,7 @@ const HeaderTop = styled.div`
   border-bottom: 4px solid #3EC9A7;
 `
 
-const Logo = FlexItem.extend`
+const Logo = styled(FlexItem)`
   font-family: 'Patua One', cursive;
   font-size: 30px;
   text-transform: uppercase;

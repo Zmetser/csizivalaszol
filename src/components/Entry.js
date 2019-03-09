@@ -7,7 +7,6 @@ import renderMessage from '../messageBody/renderer/renderMessage'
 
 import Time from './Time'
 
-import type { BlockNode } from '../messageBody/types'
 import type { EntryFull } from '../types'
 
 const StyledEntry = styled.article`

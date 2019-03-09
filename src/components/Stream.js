@@ -6,7 +6,7 @@ import * as React from 'react'
 
 import Entry from '../components/Entry'
 
-import type { ResolvedEntry, EntrySnapshotValue } from '../types'
+import type { ResolvedEntry } from '../types'
 import type { EntryId } from '../models/EntryId'
 
 type State = {
@@ -74,7 +74,7 @@ export default class Stream extends React.Component<Props, State> {
   }
 
   render () {
-    const { entries, loading, currentEntryId } = this.state
+    const { entries, currentEntryId } = this.state
     // TODO: Loading state
     return (
       <React.Fragment>

@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom'
 
 import { Theme } from 'reactackle'
 
-import { injectGlobal, ThemeProvider } from 'styled-components'
+import { createGlobalStyle, ThemeProvider } from 'styled-components'
 import reactackleThemeMixin from './theme'
 
 import App from './App'
@@ -14,16 +14,8 @@ const root = document.getElementById('root')
 
 const customTheme = {}
 
-ReactDOM.render(
-  <Theme mixin={reactackleThemeMixin}>
-    <ThemeProvider theme={customTheme}>
-      <App />
-    </ThemeProvider>
-  </Theme>
-  , root
-)
 
-injectGlobal`
+const GlobalStyle = createGlobalStyle`
   :root {
     --spacing: 1rem;
   }
@@ -45,3 +37,15 @@ injectGlobal`
     text-decoration: none;
   }
 `
+
+ReactDOM.render(
+  <Theme mixin={reactackleThemeMixin}>
+    <ThemeProvider theme={customTheme}>
+      <React.Fragment>
+        <GlobalStyle />
+        <App />
+      </React.Fragment>
+    </ThemeProvider>
+  </Theme>
+  , root
+)

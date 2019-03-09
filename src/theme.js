@@ -1,4 +1,4 @@
-import { defaultTheme } from 'reactackle'
+// import { defaultTheme } from 'reactackle'
 
 const theme = {
   components: {

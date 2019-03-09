@@ -4,13 +4,11 @@
 
 import firebaseApp from '../firebaseApp'
 
-import flatMap from 'lodash/flatMap'
-
 import Entry from '../models/Entry'
 import User from '../models/User'
 import { toUserId } from '../models/UserId'
 
-import type { EntrySnapshotValue, ResolvedEntry } from '../types'
+import type { ResolvedEntry } from '../types'
 import type { UserId } from '../models/UserId'
 import type { EntryId } from '../models/EntryId'
 

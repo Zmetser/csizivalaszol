@@ -5,9 +5,9 @@ import { Link, NavLink } from 'react-router-dom'
 
 import styled from 'styled-components'
 
-import FontAwesomeIcon from '@fortawesome/react-fontawesome'
-import { faUser, faBars } from '@fortawesome/fontawesome-free-solid'
-import { faFolder, faFolderOpen } from '@fortawesome/fontawesome-free-regular'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faUser, faBars } from '@fortawesome/free-solid-svg-icons'
+import { faFolder, faFolderOpen } from '@fortawesome/free-regular-svg-icons'
 
 import Flex, { FlexItem } from 'styled-flex-component'
 import { Button } from 'reactackle'
@@ -21,7 +21,7 @@ const Header = styled.header`
   color: #333;
 `
 
-const FlexContainer = Flex.extend`
+const FlexContainer = styled(Flex)`
   ${containerMixin}
 `
 
@@ -29,7 +29,7 @@ const HeaderTop = styled.div`
   border-bottom: 4px solid #3EC9A7;
 `
 
-const Logo = FlexItem.extend`
+const Logo = styled(FlexItem)`
   font-family: 'Patua One', cursive;
   font-size: 40px;
   text-transform: uppercase;
@@ -45,8 +45,7 @@ const HeaderNav = styled.div`
   padding: .7rem;
 `
 
-const FlexNav = FlexItem.withComponent('nav')
-const Nav = FlexNav.extend`
+const Nav = styled(FlexItem)`
   order: 2;
   width: 100%;
 
@@ -128,7 +127,7 @@ export default class HeaderComponent extends React.Component<Props, State> {
         {menuOpen &&
           <HeaderNav>
             <FlexContainer full alignCenter>
-              <Nav>
+              <Nav as="nav">
                 <ul>
                   <li>
                     <NavItem to='/archive' activeClassName='active'>
