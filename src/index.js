@@ -10,8 +10,11 @@ import App from './App'
 
 const root = document.getElementById('root')
 
-const customTheme = {}
+if (!root) {
+  throw new Error('root element not found')
+}
 
+const customTheme = {}
 
 const GlobalStyle = createGlobalStyle`
   :root {

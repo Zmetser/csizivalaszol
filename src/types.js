@@ -1,6 +1,6 @@
-import type {
-  BlockNode
-} from './messageBody/types'
+import type { BlockNode } from './messageBody/types'
+import type { EntryId } from './models/EntryId'
+import type User from './models/User'
 
 export type EntrySnapshotValue = {
   authorId: string,
@@ -21,7 +21,7 @@ export type PublishTime = {
 }
 
 export type ResolvedEntry = {
-  id: string,
+  id: EntryId,
   author: User,
   publishTime: PublishTime,
   message: Array<BlockNode>

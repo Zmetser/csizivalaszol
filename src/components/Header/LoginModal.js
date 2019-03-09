@@ -51,7 +51,11 @@ const CloseButton = styled.p`
   text-align: center;
 `
 
-export default ({ closeModal }) => (
+type Props = {
+  closeModal: () => void
+}
+
+export default ({ closeModal }: Props) => (
   <Backdrop onClick={closeModal}>
     <Modal>
       <h1>Lépj be Csizi tudástárába</h1>

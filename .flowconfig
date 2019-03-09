@@ -14,11 +14,13 @@ sketchy-null=warn
 [options]
 all=true
 emoji=true
+suppress_comment= \\(.\\|\n\\)*\\$FlowSkipForTesting
+suppress_comment= \\(.\\|\n\\)*\\$FlowFixMe
 
 [strict]
-; nonstrict-import
-; unclear-type
-; unsafe-getters-setters
-; untyped-import
-; untyped-type-import
-; sketchy-null
+nonstrict-import
+unclear-type
+unsafe-getters-setters
+untyped-import
+untyped-type-import
+sketchy-null

@@ -7,7 +7,7 @@ import renderMessage from '../messageBody/renderer/renderMessage'
 
 import Time from './Time'
 
-import type { EntryFull } from '../types'
+import type { ResolvedEntry } from '../types'
 
 const StyledEntry = styled.article`
   margin-bottom: 25px;
@@ -59,10 +59,8 @@ const StyledEntry = styled.article`
   }
 `
 
-StyledEntry.displayName = 'StyledEntry'
-
 type Props = {
-  entry: EntryFull,
+  entry: ResolvedEntry,
   selected?: boolean
 }
 export default function Entry ({ entry, selected }: Props): React.Element<'article'> {
