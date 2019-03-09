@@ -1,0 +1,24 @@
+[ignore]
+<PROJECT_ROOT>/packages/admin
+<PROJECT_ROOT>/packages/legacy
+<PROJECT_ROOT>/build
+.*/node_modules/.*
+
+[include]
+
+[libs]
+
+[lints]
+sketchy-null=warn
+
+[options]
+all=true
+emoji=true
+
+[strict]
+; nonstrict-import
+; unclear-type
+; unsafe-getters-setters
+; untyped-import
+; untyped-type-import
+; sketchy-null

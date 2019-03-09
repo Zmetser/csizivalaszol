@@ -9,7 +9,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.7.2",
     "@fortawesome/react-fontawesome": "^0.1.4",
     "firebase": "^5.8.6",
-    "flow-bin": "^0.70.0",
+    "flow-bin": "0.91.0",
     "lodash": "^4.17.11",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
